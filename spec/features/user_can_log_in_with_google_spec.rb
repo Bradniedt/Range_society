@@ -9,7 +9,7 @@ feature 'Google Sign In' do
       click_button "Sign in With Google"
     end
     it 'goes through oauth process' do
-      # expect(page).to have_content("You're logged in")
+      expect(page).to have_content("You're logged in Ricardo")
       expect(current_path).to eq(new_search_path)
       created_user = User.first
 
