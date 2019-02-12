@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user.persisted?
       flash[:success] = "You're logged in #{user.first_name}"
       session[:user_id] = user.id
-      redirect_to search_path
+      redirect_to new_search_path
     else
       flash[:error] = "Something happened, please try again"
       redirect_to root_path
