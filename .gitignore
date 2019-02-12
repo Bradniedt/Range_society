@@ -6,7 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
-
+.travis.yml
+/coverage
+/spec/cassettes
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
