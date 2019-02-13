@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get '/auth/google_oauth2', as: :google_login
   get '/auth/google_oauth2/callback', to: "sessions#create"
-  
-  resources :search, only: [:new]
+
+  get '/search', to: "search#new", as: :new_search
+  post '/search', to: "search#create", as: :create_search
 end
