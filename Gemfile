@@ -37,11 +37,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
+gem 'omniauth-google-oauth2'
 gem 'travis'
 
 group :test do
   gem 'rake'
-end 
+end
 
 group :development, :test do
   gem 'pry'
