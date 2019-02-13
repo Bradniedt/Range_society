@@ -1,0 +1,20 @@
+body {
+  background: url('welcome_splash.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+h1 {
+  text-align: center;
+  color: white
+}
+p {
+  text-align: center;
+  color: white
+}
+oauth-button {
+  bottom: 10px;
+  width: 50%;
+  border: 3px solid #8AC007;
+}
