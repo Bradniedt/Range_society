@@ -1,0 +1,6 @@
+<%= form_tag :create_search, method: :post do %>
+  <p>Your EV Range (in miles)<%= select_tag :ev_range, options_for_select(ranges) %></p>
+  <p>Activity<%= select_tag :activity, options_for_select(activities) %></p>
+  <p>Zipcode<%= text_field_tag :zipcode %></p>
+  <%= submit_tag "Search" %>
+<% end %>

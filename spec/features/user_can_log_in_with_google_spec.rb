@@ -20,21 +20,5 @@ feature 'Google Sign In' do
       expect(created_user.token).to eq(@user_info["credentials"]["token"])
       expect(created_user.refresh_token).to eq(@user_info["credentials"]["refresh_token"])
     end
-    def stub_omniauth
-      OmniAuth.config.test_mode = true
-      OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-        "provider" => 'google_oauth2',
-        "info" => {
-          "name"=>"Ricardo Ledesma",
-          "email"=>"ricardoledesmadev@gmail.com",
-          "first_name"=>"Ricardo",
-          "last_name"=>"Ledesma"
-        },
-        "credentials" => {
-          "token"=> "adfsdljf;alsdjfiasjdoifaos;dijfidjgljdf",
-          "refresh_token"=>"dsafkjdoigior939393"
-        }}
-      )
-    end
   end
 end
