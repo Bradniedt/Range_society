@@ -12,16 +12,22 @@ feature "User Current Location" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit new_search_path
+
+      select "5", from: :ev_range
+      select "Food", from: :activity
     end
     context 'filling out form - clicking \'Use Current Location\' - and searching' do
       it 'show results' do
         click_button "Use Current Location"
         save_and_open_page
+        expect(find_field(:search_location).value).to match(/\d{2}\.\d{7} -\d{3}\.\d{7}/)
       end
     end
     context 'filling out form with zip code and searching' do
       xit '' do
-
+        fill_in :search_location, with: "80203"
+        click_button "Search"
+        expect(current_path).to eq(map_path)
       end
     end
   end

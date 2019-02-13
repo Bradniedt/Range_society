@@ -1,6 +1,11 @@
 <%= form_tag create_search_path, method: :post do %>
-  <%= text_field_tag "search_location", nil, placeholder: "Enter Zip Code", id: "search-location" %>
-
+  <%= label_tag :ev_range, "Your EV Range (in miles)" %>
+  <%= select_tag :ev_range, options_for_select(ranges) %>
+  <%= label_tag :activity, "Activity" %>
+  <%= select_tag :activity, options_for_select(activities) %>
+  <%= label_tag :search_location, "Enter Zip Code" %>
+  <%= text_field_tag :search_location, nil, placeholder: "Enter Zip", id: "search-location" %>
   <%= button_tag "Use Current Location", type: "button", id: "current-location" %>
+  <%= submit_tag "Search" %>
 <% end %>
 <%= javascript_include_tag 'event_listeners' %>

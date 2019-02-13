@@ -40,6 +40,8 @@ gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'travis'
 gem 'geocoder'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :test do
   gem 'rake'
