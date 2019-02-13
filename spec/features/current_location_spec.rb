@@ -16,18 +16,35 @@ feature "User Current Location" do
       select "5", from: :ev_range
       select "Food", from: :activity
     end
-    context 'filling out form - clicking \'Use Current Location\' - and searching' do
-      it 'show results' do
-        click_button "Use Current Location"
-        save_and_open_page
-        expect(find_field(:search_location).value).to match(/\d{2}\.\d{7} -\d{3}\.\d{7}/)
+    context 'filling out form - with lat and lon - and searching' do
+      it 'redirects and shows results' do
+        lat = "39.7251165"
+        lon = "-104.985933178656"
+        fill_in :search_location, with: "#{lat} #{lon}"
+        click_button "Search"
+        expect(current_path).to eq(map_path)
       end
     end
     context 'filling out form with zip code and searching' do
-      xit '' do
+      it 'redirects and show results' do
         fill_in :search_location, with: "80203"
         click_button "Search"
         expect(current_path).to eq(map_path)
+      end
+    end
+    context 'filling out form without zip code and searching' do
+      it 'redirects with proper flash message' do
+        click_button "Search"
+        expect(current_path).to eq(new_search_path)
+        expect(page).to have_content('Zip Code must be entered or press \'Use Current Location\'')
+      end
+    end
+    context 'filling out form with invalid input for zip code and searching' do
+      it 'redirects with proper flash message' do
+        fill_in :search_location, with: "Platform 9 3/4"
+        click_button "Search"
+        expect(current_path).to eq(new_search_path)
+        expect(page).to have_content('Invalid Zip Code - try again or press \'Use Current Location\'')
       end
     end
   end

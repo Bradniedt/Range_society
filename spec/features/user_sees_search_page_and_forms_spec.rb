@@ -16,11 +16,11 @@ describe 'as a logged in user, my path is search' do
 
     expect(current_path).to eq(new_search_path)
     expect(page).to have_content("Your EV Range (in miles)")
-    expect(page).to have_content("Zipcode")
+    expect(page).to have_content("Enter Zip Code")
     expect(page).to have_content("Activity")
 
     select("#{range}", :from => 'ev_range')
-    fill_in :zipcode, with: zip
+    fill_in :search_location, with: zip
     select("#{category}", :from => 'activity')
 
     expect(page).to have_button("Search")
