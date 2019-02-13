@@ -39,6 +39,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'travis'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :test do
   gem 'rake'
