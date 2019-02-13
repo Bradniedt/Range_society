@@ -1,5 +1,6 @@
 <%= form_tag create_search_path, method: :post do %>
-  <%= text_field_tag "zip_search", nil, placeholder: "Enter Zip Code", id: "zip-search" %>
+  <%= text_field_tag "search_location", nil, placeholder: "Enter Zip Code", id: "search-location" %>
+
   <%= button_tag "Use Current Location", type: "button", id: "current-location" %>
 <% end %>
 <%= javascript_include_tag 'event_listeners' %>
