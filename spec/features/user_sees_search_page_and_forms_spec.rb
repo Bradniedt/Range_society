@@ -25,20 +25,4 @@ describe 'as a logged in user, my path is search' do
 
     expect(page).to have_button("Search")
   end
-  def stub_omniauth
-    OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-      "provider" => 'google_oauth2',
-      "info" => {
-        "name"=>"Ricardo Ledesma",
-        "email"=>"ricardoledesmadev@gmail.com",
-        "first_name"=>"Ricardo",
-        "last_name"=>"Ledesma"
-      },
-      "credentials" => {
-        "token"=> "ya29.GluuBlpgMeVcKRx807Vkj_iYtzXVTX3lcotXrvhpSal-CQaxNfesSclQAwrl1j7kxtCcI7O5QSRZ2kftQfmsUMBdeED9G0IysTwyRzwdqFHtwE7wRQd_LPe43JE1",
-        "refresh_token"=>"1/_ilO4OLl1Bw2bPMIgc3d4YrVZ3y7wv2uc606EUyP_ag"
-        }}
-      )
-  end
 end
