@@ -84,6 +84,7 @@ GEM
     ffi (1.10.0)
     figaro (1.1.1)
       thor (~> 0.14)
+    geocoder (1.5.1)
     gh (0.15.1)
       addressable (~> 2.4.0)
       backports
@@ -284,6 +285,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   faraday
   figaro
+  geocoder
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)

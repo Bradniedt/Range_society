@@ -39,6 +39,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'travis'
+gem 'geocoder'
 
 group :test do
   gem 'rake'
