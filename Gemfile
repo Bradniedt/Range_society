@@ -38,10 +38,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
 gem 'travis'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :test do
   gem 'rake'
-end 
+end
 
 group :development, :test do
   gem 'pry'
