@@ -2,7 +2,9 @@
   <p><%= label_tag :ev_range, "Your EV Range (in miles)" %></p>
   <p><%= select_tag :ev_range, options_for_select(ranges) %></p>
   <p><%= label_tag :activity, "Activity" %></p>
-  <p><%= select_tag :activity, options_for_select(activities) %></p>
+  <% activities.each do |activity| %>
+    <%= radio_button_tag "activity-#{activity}", "#{activity}", false %>
+  <% end %>
   <p><%= label_tag :search_location, "Enter Zip Code" %></p>
   <p><%= text_field_tag :search_location, nil, placeholder: "Enter Zip", id: "search-location" %></p>
   <p><%= button_tag "Use Current Location", type: "button", id: "current-location" %></p>
