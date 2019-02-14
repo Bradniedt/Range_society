@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/search', to: "search#new", as: :new_search
   post '/search', to: "search#create", as: :create_search
 
-  get '/map', to: "map#show", as: :map
+  get '/map', to: "map#show"
 end

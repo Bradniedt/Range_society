@@ -5,5 +5,5 @@
   height="100%"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=<%= ENV['GOOGLE_MAP_KEY'] %>
-    &q=<%= @activity %>+within+<%= @range %>+miles+of+zipcode+<%= @zipcode %>" allowfullscreen>
+    &<%= @search_query_url %>" allowfullscreen>
 </iframe>
