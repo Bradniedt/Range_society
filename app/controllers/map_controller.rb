@@ -1,9 +1,11 @@
 class MapController < ApplicationController
   def show
-    @range = session[:search][:range]
-    @activity = session[:search][:activity]
-    @zipcode = session[:search][:zipcode]
-    @lat = session[:search][:lat]
-    @lon = session[:search][:lon]
+    @search_query_url = search_query_url(session[:search])
+  end
+
+  private
+
+  def search_query_url(search)
+    "q=#{search["activity"]}&center=#{search["lat"]},#{search["lon"]}&zoom=14"
   end
 end
