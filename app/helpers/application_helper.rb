@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def activities
-    ["Food", "Culture", "Entertainment", "Outdoors"]
+    ["Food", "Museums", "Concerts", "Parks"]
   end
 end

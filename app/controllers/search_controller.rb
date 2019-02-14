@@ -7,6 +7,15 @@ class SearchController < ApplicationController
   def create
     coordinates = get_lat_lon(params["search_location"])
     return handle_invalid_location(coordinates) unless coordinates
+
+    session[:search] = {
+      range: params[:ev_range],
+      activity: params[:activity],
+      zipcode: params[:zipcode],
+      lat: coordinates[:lat],
+      lon: coordinates[:lon]
+    }
+
     redirect_to map_path
   end
 
@@ -41,4 +50,6 @@ class SearchController < ApplicationController
     end
     redirect_to new_search_path
   end
+
+
 end
