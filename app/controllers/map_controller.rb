@@ -1,6 +1,8 @@
 class MapController < ApplicationController
   def show
     @search_query_url = search_query_url(session[:search])
+    @lat = session[:search][:lat]
+    @long = session[:search][:long]
   end
 
   private
