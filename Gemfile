@@ -55,7 +55,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'awesome_print'
   gem 'vcr'
-  gem 'simplecov', require: false, group: :test
+  gem 'simplecov'
 end
 
 group :development do
