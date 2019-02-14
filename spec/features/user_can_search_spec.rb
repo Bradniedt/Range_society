@@ -17,7 +17,7 @@ describe 'as a logged in user, my path is search' do
         category = "Food"
 
         select("#{range}", :from => 'ev_range')
-        fill_in :zipcode, with: zip
+        fill_in :search_location, with: zip
         select("#{category}", :from => 'activity')
         click_on("Search")
         expect(current_path).to eq(map_path)
