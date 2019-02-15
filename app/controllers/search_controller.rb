@@ -31,7 +31,8 @@ class SearchController < ApplicationController
       lat, lon = location.split(" ")
       return {lat: lat, lon:lon}
     when /\d{5}/ then
-      result = Geocoder.search(location).first.data
+      # will need to change this eventually if we want this to work nationally.
+      result = Geocoder.search(location).select{ |place| place.data["address"]["state"] == "Colorado"}.first.data
       lat = result["lat"]
       lon = result["lon"]
       return {lat: lat, lon:lon}
