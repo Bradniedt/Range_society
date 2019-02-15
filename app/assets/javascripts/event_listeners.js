@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+self.addEventListener("load", function(){
   const options = { enableHighAccuracy: true, timeout: 7000, maximumAge: 0 };
   const currLocationBtn = document.querySelector('#current-location');
   const currLocationInput = document.querySelector('#search-location');
