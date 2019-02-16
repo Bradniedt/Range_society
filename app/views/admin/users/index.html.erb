@@ -1,0 +1,7 @@
+<h1>List of All Users</h1>
+
+<% @users.each do |user| %>
+  <h2>Name: <%= user.first_name %>, <%= user.last_name %></h2>
+  <h2>Email: <%= user.email %></h2>
+  <h2>Current Privileges:<%= user.role %></h2>
+<% end %>
