@@ -7,17 +7,17 @@ class EvStation
               :zip,
               :distance,
               :lat,
-              :lon
+              :lon,
+              :availibility
 
   def initialize(attributes)
     @hours = attributes[:access_days_time]
     @name = attributes[:station_name]
     @street_address = attributes[:street_address]
-    @city = attributes[:city]
-    @state = attributes[:state]
-    @zip = attributes[:zip]
+    @city = "#{attributes[:city]}, #{attributes[:state]} #{attributes[:zip]}"
     @distance = attributes[:distance]
     @lat = attributes[:latitude]
     @lon = attributes[:longitude]
+    @availibility = attributes[:groups_with_access_code]
   end
 end

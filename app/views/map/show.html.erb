@@ -16,11 +16,10 @@
 
   //add a ruby iterator to iterate through a colloection like restaurants, and build a marker and bindPopup for each location.
 </script>
-
 <!-- this is purely for testing purposes for the ev charge stations
-so i can pass around the lat and lon, which will actually happen -->
+  so i can pass around the lat and lon, which will actually happen -->
 <%= form_tag create_ev_search_path, method: :post do %>
-  <p><%= label_tag :ev_search_location, "Enter Coordinates" %></p>
-  <p><%= text_field_tag :ev_search_location, nil, placeholder: "", id: "ev-search-location" %></p>
-  <p><%= submit_tag "Ev Search" %></p>
+<p><%= label_tag :ev_search_location, "Enter Coordinates" %></p>
+<p><%= text_field_tag :ev_search_location, nil, placeholder: "", id: "ev-search-location" %></p>
+<p><%= submit_tag "Ev Search" %></p>
 <% end %>
