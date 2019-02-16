@@ -1,7 +1,10 @@
 language: ruby
 rvm:
- - 2.4.5
+- 2.4.5
 script:
- - bundle exec rake db:create
- - bundle exec rake db:migrate
- - bundle exec rspec
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
+env:
+  matrix:
+    secure: Yi/PhoFrKV3aWyzgc7c4J8bCchLt+rYbBtpCIejQ09naQ+pD4e/rshted6Ei+oyc76s1pKXjJfkegONe15JhD7SnHD1+DUlkl+Ozu7f7u+ckJPq8jYLaFIPdSAqxIKKdom+A1IWR21WfhIv1bzaGbqxTCVUbP5IkHNOfu9JNZg6trlyjfELqDEkTvFbVX2LBhjh1e9DTikvTyAwSPC2RzzGA5XSDIzddUNwOE2ZxparmvwZkgg0JJtEwYWBxGXUvwElbrqjOKzNk1wxuDI1Ka2qB0xp46ErJ3x0CI+3jMy3C5s1JPhhuxH6mTcSxvlcxgkLJMN+SVPwr3vdeQpQSRkW4VADuxKLJO/pQUrRRl/CL+rlE+58k+hYRaNC6wufnsc5zsLmYiiNm0p3J1hjFstiTk+P78tuc37HubxIr/xVsp2FMYadDLHZSBejm0/2d/AJJD8nQZ5ZqqVuFnA3Bb2L0MN8inL3tCsQckJ+znNCMTHlN7mZp4SWhTu3ctYlQ2PcjqhmpxJBoehcnn1YenznfttPAjnV42M1oNouoiovyq3s58WFOmycXwVksVZpH5GgdetG/LWHkZLVzRY0JNTHLeY6u7Nh/BY9UggI+L8YHYOGijR4biTUitw3NEa9N5X3Sw7dqLiE/cZkGj3U2f1fD8isR2oubR+d+45IxWIo=
