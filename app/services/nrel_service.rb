@@ -5,8 +5,14 @@ class NrelService
     @lon = lon
   end
 
-  def ev_charging_stations
+  def raw_ev_charging_stations
     JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
+  end
+
+  def ev_charging_stations
+    raw_ev_charging_stations.map do |ev|
+      EvStation.new(ev)
+    end
   end
 
   def conn
@@ -22,7 +28,7 @@ class NrelService
   end
 
   def response
-    conn.get("/api/alt-fuel-stations/v1/nearest.json")
+    conn.get("/api/alt-fuel-stations/v1/nearest.json/")
   end
 
 end
