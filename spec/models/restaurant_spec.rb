@@ -26,6 +26,6 @@ RSpec.describe 'Restaurant', type: :model do
     expect(@new.state).to eq(@data["location"]["state"])
     expect(@new.zip_code).to eq(@data["location"]["zip_code"])
     expect(@new.phone).to eq(@data["phone"])
-    expect(@new.distance).to eq(@data["distance])
+    expect(@new.distance).to eq(@data["distance"])
   end
 end
