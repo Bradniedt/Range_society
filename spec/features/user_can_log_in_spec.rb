@@ -27,7 +27,6 @@ feature 'Login' do
   context 'as a visitor (has account) clicking \'Sign in with Google\' on homepage' do
     it 'goes through oauth process, redirects to dashboard_path' do
       User.create(
-        name: "Ricardo Ledesma",
         email: "ricardoledesma@mail.com",
         first_name: "Ricardo",
         last_name: "Ledesma",
