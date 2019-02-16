@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Museum, type: :model do
   before :each do
-    VCR.use_cassette("https://api.yelp.com/v3/businesses/search") do
+    VCR.use_cassette("https://api.yelp.com/v3/businesses/search?categories=museums&latitude=39.7392&longitude=-104.9903") do
       conn = Faraday.new("https://api.yelp.com/v3/businesses/search") do |f|
         f.adapter Faraday.default_adapter
         f.headers["Authorization"] = ENV['YELP_KEY']
