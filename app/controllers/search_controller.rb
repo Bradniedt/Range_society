@@ -19,10 +19,6 @@ class SearchController < ApplicationController
     redirect_to map_path
   end
 
-  # def require_user
-  #   render_404 unless current_user
-  # end
-
   private
 
   def get_lat_lon(location)
