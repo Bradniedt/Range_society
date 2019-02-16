@@ -13,7 +13,7 @@ describe NrelService do
       lat = "39.7392"
       lon = "-104.9903"
       ns = NrelService.new(lat, lon)
-      count = 25
+      count = 20
 
       expect(ns.raw_ev_charging_stations.count).to eq(count)
       expect(ns.raw_ev_charging_stations.first).to have_key(:access_days_time)
