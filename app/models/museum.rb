@@ -9,7 +9,7 @@ class Museum
               :location,
               :display_phone,
               :distance
-  
+
   def initialize(attributes)
     @name = attributes[:name]
     @image_url = attributes[:image_url]
@@ -21,5 +21,13 @@ class Museum
     @location = attributes[:location]
     @display_phone = attributes[:display_phone]
     @distance = attributes[:distance]
+  end
+
+  def display_address
+    location[:display_address].join(" ")
+  end
+
+  def popup_html
+    "<p><b>#{name}</b></p><p><b>Review Count:</b> #{review_count}</p><p><b>Rating:</b> #{rating}</p><p><b>Address:</b> #{display_address}</p><p><a href='#{url}'>View on Yelp</a></p>"
   end
 end
