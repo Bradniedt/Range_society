@@ -9,16 +9,14 @@ describe 'as a logged in user, my path is search' do
       click_button "Sign in With Google"
     end
     it 'i see a map populated with results from the activity chosen' do
-      VCR.use_cassette('map') do
-        user = User.first
-
+      VCR.use_cassette("https://api.yelp.com/v3/businesses/search") do
         range = "25"
         zip = 81401
-        category = "Food"
+        category = "Museums"
 
-        select("#{range}", :from => 'ev_range')
+        select(range, :from => 'ev_range')
         fill_in :search_location, with: zip
-        select("#{category}", :from => 'activity')
+        select(category, :from => 'activity')
         click_on("Search")
         expect(current_path).to eq(map_path)
         expect(status_code).to eq(200)
