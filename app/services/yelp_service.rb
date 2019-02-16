@@ -17,9 +17,9 @@ class YelpService
   end
 
   def get_restaurants
-    response = conn.get("?term=#{@activity}&latitude=#{@latitude}&longitude=#{@longitude}")
-    results = JSON.parse(response.body, symbolize_names: true)
-    results.each do |result|
+    response = conn.get("?term=#{@activity}&latitude=#{@latitude}&longitude=#{@longitude}&limit=25")
+    results = JSON.parse(response.body)["businesses"]
+    results.map do |result|
       Restaurant.new(result)
     end
   end
