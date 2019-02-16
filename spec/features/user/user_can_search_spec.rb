@@ -10,7 +10,7 @@ describe 'as a logged in user, my path is search' do
     end
     it 'i see a map populated with results from the activity chosen' do
       VCR.use_cassette('map') do
-        user = User.first
+        User.first
 
         range = "25"
         zip = 81401
