@@ -9,12 +9,6 @@ class NrelService
     JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
   end
 
-  def ev_charging_stations
-    raw_ev_charging_stations.map do |ev|
-      EvStation.new(ev)
-    end
-  end
-
   def conn
     Faraday.new("https://developer.nrel.gov") do |faraday|
       faraday.params["api_key"] = ENV['NREL_API_KEY']
