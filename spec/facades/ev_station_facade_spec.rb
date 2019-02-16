@@ -9,7 +9,7 @@ describe EvStationFacade do
     expect(evsf).to be_a(EvStationFacade)
   end
 end
-describe 'instance methods', :vcr do
+describe 'instance methods' do
   it 'ev_stations' do
     lat = "39.7392"
     lon = "-104.9903"

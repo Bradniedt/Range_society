@@ -9,7 +9,7 @@ describe NrelService do
     expect(ns).to be_a(NrelService)
   end
   describe '#instance methods' do
-    it 'raw_ev_charging_stations', :vcr do
+    it 'raw_ev_charging_stations' do
       lat = "39.7392"
       lon = "-104.9903"
       ns = NrelService.new(lat, lon)
