@@ -13,7 +13,7 @@ class NrelService
     Faraday.new("https://developer.nrel.gov") do |faraday|
       faraday.params["api_key"] = ENV['NREL_API_KEY']
       faraday.params["fuel_type"] = "ELEC"
-      faraday.params["limit"] = 25
+      faraday.params["limit"] = 20
       faraday.params["range"] = 2
       faraday.params["latitude"] = @lat
       faraday.params["longitude"] = @lon
