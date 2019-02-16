@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   post '/search', to: "search#create", as: :create_search
 
   get '/map', to: "map#show"
+
+  namespace :admin do
+    get 'dashboard', as: 'dashboard', to: 'users#index'
+  end
 end
