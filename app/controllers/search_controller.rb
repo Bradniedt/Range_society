@@ -11,7 +11,6 @@ class SearchController < ApplicationController
     session[:search] = {
       range: params[:ev_range],
       activity: params[:activity],
-      zipcode: params[:zipcode],
       lat: coordinates[:lat],
       lon: coordinates[:lon]
     }
@@ -51,6 +50,4 @@ class SearchController < ApplicationController
     end
     redirect_to new_search_path
   end
-
-
 end
