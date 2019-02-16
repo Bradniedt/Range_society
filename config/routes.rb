@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get '/map', to: "map#show"
   get '/dashboard', to: "dashboard#show"
+
+  resources :charge_spots, only: [:new]
 end
