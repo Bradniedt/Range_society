@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_admin
-    true if current_user && current_user.admin?
+    current_user && current_user.admin?
   end
 
   def render_404
