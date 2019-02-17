@@ -6,14 +6,15 @@ body {
   -o-background-size: cover;
 }
 h1 {
+  padding: 25px;
   text-align: center;
   color: black;
-  font-family: serif;
+  font-family: 'Roboto', sans-serif;
 }
 p {
   text-align: center;
   color: black;
-  font-family: serif;
+  font-family: 'Roboto', sans-serif;
 }
 .oauth-button {
   position: fixed;
