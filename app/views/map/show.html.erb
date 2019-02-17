@@ -9,9 +9,9 @@
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibWFyeWFncmFjZSIsImEiOiJjanM0eG9qMmIwOXlhNDVuaTNuOXMzcXd1In0.Y3D7BRb8btkvg5JV_6PZaQ'
   }).addTo(mymap);
-  <% @museums.each_with_index do |museum, i| %>
-    const <%= "marker#{i}" %> = L.marker([<%= museum.coordinates[:latitude] %>, <%= museum.coordinates[:longitude] %>]).addTo(mymap);
-    <%= "marker#{i}" %>.bindPopup("<%= museum.popup_html.html_safe %>").openPopup();
+  <% @businesses.each_with_index do |biz, i| %>
+    const <%= "marker#{i}" %> = L.marker([<%= biz.coordinates[:latitude] %>, <%= biz.coordinates[:longitude] %>]).addTo(mymap);
+    <%= "marker#{i}" %>.bindPopup("<%= biz.popup_html.html_safe %>").openPopup();
   <% end %>
   //add a ruby iterator to iterate through a colloection like restaurants, and build a marker and bindPopup for each location.
 </script>
