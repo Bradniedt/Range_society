@@ -1,5 +1,5 @@
 body {
-  background: url('welcome_splash.jpg') no-repeat center center fixed;
+  background: asset-data-url('welcome_splash.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -17,4 +17,7 @@ oauth-button {
   bottom: 10px;
   width: 50%;
   border: 3px solid #8AC007;
+}
+#background-img {
+  z-index: -1;
 }

@@ -17,6 +17,13 @@
     iconAnchor: [22, 94],
     popupAnchor:  [-3, -76],
   });
+  // var elecIcon = L.icon ({
+  //   iconUrl: 'tree.png',
+  //
+  //   iconSize: [40, 40],
+  //   iconAnchor: [22, 94],
+  //   popupAnchor:  [-3, -76],
+  // });
   <% @ev_stations.each do |ev| %>
   var marker = L.marker([<%= ev.lat %>, <%= ev.lon %>], {icon: elecIcon}).addTo(mymap);
   marker.bindPopup("<b><%= ev.name %></b><br><%= ev.hours %><br><%= ev.street_address %><br><%= ev.city %>").openPopup();
