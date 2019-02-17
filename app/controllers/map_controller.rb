@@ -2,7 +2,7 @@ class MapController < ApplicationController
   def show
     conn = Faraday.new("https://api.yelp.com/v3/businesses/search") do |f|
       f.adapter Faraday.default_adapter
-      f.headers["Authorization"] = ENV['YELP_KEY']
+      f.headers["Authorization"] = "Bearer #{ENV['YELP_API_KEY']}"
     end
     response = conn.get do |req|
       req.params['latitude'] = session[:search]["lat"]
