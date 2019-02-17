@@ -2,6 +2,8 @@ window.addEventListener("load", function(){
   const options = { enableHighAccuracy: true, timeout: 7000, maximumAge: 0 };
   const currLocationBtn = document.querySelector('#current-location');
   const currLocationInput = document.querySelector('#search-location');
+  const submitSearchBtn = document.querySelector('#submit-search');
+  const searchForm = document.querySelector('#search-form');
 
   function getLocation() {
     return new Promise(function(resolve, reject) {
@@ -17,19 +19,23 @@ window.addEventListener("load", function(){
     });
   }
 
-  function populateSearchLocation(coordinates) {
-    currLocationInput.value = `${coordinates.lat} ${coordinates.long}`;
+  function createCoordsCookie(coordinates) {
+    const cookie = `coordinates=${coordinates.lat} ${coordinates.long}`;
+    document.cookie = cookie;
   }
 
-  function fillCurrentLocation(event) {
-    event.preventDefault();
+  function submitWithCurrent() {
     getLocation()
-      .then(populateSearchLocation)
+      .then(createCoordsCookie)
+      .then(function() {
+        submitSearchBtn.click();
+      })
       .catch(function(error) {
         console.warn(error);
       });
   }
 
-currLocationBtn.addEventListener('click', fillCurrentLocation);
-
+  if (currLocationBtn && searchForm) {
+    currLocationBtn.addEventListener('click', submitWithCurrent);
+  }
 });
