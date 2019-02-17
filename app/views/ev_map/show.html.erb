@@ -9,8 +9,16 @@
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibWFyeWFncmFjZSIsImEiOiJjanM0eG9qMmIwOXlhNDVuaTNuOXMzcXd1In0.Y3D7BRb8btkvg5JV_6PZaQ'
 }).addTo(mymap);
+
+  var elecIcon = L.icon ({
+    iconUrl: 'e-v.png',
+
+    iconSize: [30, 30],
+    iconAnchor: [22, 94],
+    popupAnchor:  [-3, -76],
+  });
   <% @ev_stations.each do |ev| %>
-  var marker = L.marker([<%= ev.lat %>, <%= ev.lon %>]).addTo(mymap);
+  var marker = L.marker([<%= ev.lat %>, <%= ev.lon %>], {icon: elecIcon}).addTo(mymap);
   marker.bindPopup("<b><%= ev.name %></b><br><%= ev.hours %><br><%= ev.street_address %><br><%= ev.city %>").openPopup();
   <% end %>
 </script>
