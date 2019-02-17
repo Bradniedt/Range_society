@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  enum role: [:default, :admin]
+
   def self.from_omniauth(access_token)
     User.create(user_info_from_oauth(access_token))
   end
