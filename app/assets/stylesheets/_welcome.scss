@@ -7,14 +7,17 @@ body {
 }
 h1 {
   text-align: center;
-  color: white
+  color: black;
+  font-family: serif;
 }
 p {
   text-align: center;
-  color: white
+  color: black;
+  font-family: serif;
 }
-oauth-button {
-  bottom: 10px;
-  width: 50%;
-  border: 3px solid #8AC007;
+.oauth-button {
+  position: fixed;
+  left: 45%;
+  bottom: 30%;
+  border: 2px solid black;
 }
