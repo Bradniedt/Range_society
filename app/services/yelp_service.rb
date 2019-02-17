@@ -18,7 +18,7 @@ class YelpService
 
   def get_restaurants
     response = conn.get("v3/businesses/search?term=#{@activity}&latitude=#{@latitude}&longitude=#{@longitude}&limit=25")
-    results = JSON.parse(response.body)["businesses"]
+    JSON.parse(response.body)["businesses"]
   end
 
 end
