@@ -35,7 +35,7 @@ window.addEventListener("load", function(){
       });
   }
 
-  if (currLocationBtn && searchForm) {
+  if (currLocationBtn) {
     currLocationBtn.addEventListener('click', submitWithCurrent);
   }
 });
