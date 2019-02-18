@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :trip_logs
   enum role: [:default, :admin]
 
   def self.from_omniauth(access_token)
