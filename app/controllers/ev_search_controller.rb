@@ -1,5 +1,5 @@
 class EvSearchController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   before_action :require_user
 
   def create
@@ -7,6 +7,6 @@ class EvSearchController < ApplicationController
     latitude, longitude = picked_location[:coordinates].split(" ")
     session[:ev_search] = {latitude: latitude, longitude: longitude}
     session[:picked_location_html] = picked_location[:popup_html]
-    redirect_to ev_map_path
+    redirect_to ev_map_url, status: 302
   end
 end

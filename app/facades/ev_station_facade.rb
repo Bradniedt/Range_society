@@ -1,5 +1,4 @@
 class EvStationFacade
-
   def initialize(lat, lon)
     @lat = lat
     @lon = lon
@@ -20,5 +19,4 @@ class EvStationFacade
   def service
     NrelService.new(@lat, @lon)
   end
-
 end
