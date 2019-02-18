@@ -1,5 +1,4 @@
-class Dashboard::UsersController < ApplicationController
-  before_action :require_user
+class Dashboard::UsersController < Dashboard::BaseController
   def show
     @user = User.find(session[:user_id])
   end
