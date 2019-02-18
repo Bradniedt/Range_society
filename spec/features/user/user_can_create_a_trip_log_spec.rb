@@ -21,4 +21,17 @@ describe 'As a User' do
     expect(page).to have_content("Description")
     expect(page).to have_button("Create Trip Log")
   end
+  it 'creates a new trip if information has been entered correctly' do
+    title = "Trip Log 1"
+    miles = 454.4
+    description = "Best Trip Ever"
+
+    click_on "Create a Trip Log"
+    fill_in :title, with: title
+    fill_in :miles, with: miles
+    fill_in :description, with: description
+    click_on "Create Trip Log"
+
+    expect(current_path).to eq(dashboard_trip_logs)
+  end
 end
