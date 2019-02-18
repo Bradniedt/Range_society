@@ -10,7 +10,7 @@ class Place
               :display_phone,
               :distance
 
-  def initialize(attributes)
+  def initialize(attributes, category)
     @name = attributes[:name]
     @image_url = attributes[:image_url]
     @is_closed = attributes[:is_closed]
@@ -21,6 +21,7 @@ class Place
     @location = attributes[:location]
     @display_phone = attributes[:display_phone]
     @distance = attributes[:distance]
+    @category = category
   end
 
   def display_address

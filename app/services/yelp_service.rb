@@ -18,7 +18,7 @@ class YelpService
     limit = 24 / search_categories.length
 
     search_categories.map do |c|
-      create_places(get_businesses(c, nil, limit, sort_by))
+      create_places(get_businesses(c, nil, limit, sort_by), c)
     end.flatten
   end
 
@@ -34,9 +34,9 @@ class YelpService
     JSON.parse(response.body, symbolize_names: true)[:businesses]
   end
 
-  def create_places(places)
+  def create_places(places, category)
     places.map do |raw_place|
-      Place.new(raw_place)
+      Place.new(raw_place, category)
     end
   end
 end
