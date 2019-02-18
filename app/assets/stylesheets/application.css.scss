@@ -49,38 +49,3 @@ h1 {
 }
 
 #mapid { height: 100vh; }
-
-#welcome-header {
-  background: #333138;
-}
-
-#title {
-  color: #D0D3D2;
-}
-
-.btn {
-  background: #4FB54F;
-  color: #333138;
-  border: 1px solid #333138;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-    border: 1px solid #FCA311;
-    background: none;
-}
-
-
-.navbar {
-  @media screen and (max-width: 320px) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  @media screen and (min-width: 321px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-}
