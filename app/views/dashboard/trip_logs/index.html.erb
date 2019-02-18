@@ -1,0 +1,10 @@
+<h1>All of Your Trips</h1>
+<div class="trip-log-list">
+  <% @trip_logs.each do |trip_log| %>
+  <div id="trip-log">
+    <%= trip_log.title %>
+    <%= trip_log.miles %>
+    <%= trip_log.description %>
+  </div>
+  <% end %>
+</div>
