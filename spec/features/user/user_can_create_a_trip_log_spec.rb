@@ -27,9 +27,9 @@ describe 'As a User' do
     description = "Best Trip Ever"
 
     click_on "Create a Trip Log"
-    fill_in :title, with: title
-    fill_in :miles, with: miles
-    fill_in :description, with: description
+    fill_in :trip_log_title, with: title
+    fill_in :trip_log_miles, with: miles
+    fill_in :trip_log_description, with: description
     click_on "Create Trip Log"
 
     expect(current_path).to eq(dashboard_trip_logs)
