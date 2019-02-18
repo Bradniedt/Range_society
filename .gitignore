@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+.DS_Store
 Gemfile.lock
 /coverage
 /spec/cassettes
@@ -14,7 +15,7 @@ Gemfile.lock
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+.DS_Store
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
@@ -30,3 +31,4 @@ Gemfile.lock
 
 # Ignore application configuration
 /config/application.yml
+.DS_Store

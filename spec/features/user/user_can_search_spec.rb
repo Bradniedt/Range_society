@@ -10,8 +10,9 @@ describe 'as a logged in user, my path is search' do
       click_button "Search for Locations"
     end
     it 'i see a map populated with results from the activity chosen' do
-      VCR.use_cassette("https://api.yelp.com/v3/businesses/search") do
-        range = 25
+      VCR.use_cassette('map') do
+        User.first
+        range = "25"
         zip = 81401
         category = "Museums"
 
