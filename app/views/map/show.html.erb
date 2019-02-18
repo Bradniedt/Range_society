@@ -1,18 +1,17 @@
 <div id="mapid"></div>
 
 <script>
-  var mymap = L.map('mapid').setView([<%= @lat %>, <%= @lon %>], 13);
+  const mymap = L.map('mapid').setView([<%= @lat %>, <%= @lon %>], 13);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibWFyeWFncmFjZSIsImEiOiJjanM0eG9qMmIwOXlhNDVuaTNuOXMzcXd1In0.Y3D7BRb8btkvg5JV_6PZaQ'
-}).addTo(mymap);
-
-  var marker = L.marker([39.7508, -104.9966]).addTo(mymap);
-  var marker = L.marker([39.7507, -104.9965]).addTo(mymap);
-  marker.bindPopup("<b>Header!</b><br>Header").openPopup();
-
+  }).addTo(mymap);
+  <% @businesses.each_with_index do |biz, i| %>
+    const <%= "marker#{i}" %> = L.marker([<%= biz.coordinates[:latitude] %>, <%= biz.coordinates[:longitude] %>]).addTo(mymap);
+    <%= "marker#{i}" %>.bindPopup("<%= biz.popup_html.html_safe %>").openPopup();
+  <% end %>
   //add a ruby iterator to iterate through a colloection like restaurants, and build a marker and bindPopup for each location.
 </script>

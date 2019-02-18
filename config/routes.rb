@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
   get '/map', to: "map#show"
   get '/ev_map', to: "ev_map#show"
+  get '/dashboard', to: "dashboard#show"
 
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'
+    resources :users, only: [:index, :update]
   end
+
+  resources :charge_spots, only: [:new]
 end

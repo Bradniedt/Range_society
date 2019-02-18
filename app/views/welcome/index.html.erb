@@ -66,5 +66,11 @@
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     </div>
   </section>
-    <%= button_to "Sign in With Google", google_login_path, method: :get %>
+    <% unless current_user %>
+      <%= button_to "Sign in With Google", google_login_path, method: :get %>
+    <% end %>
+    <% if current_user %>
+      <%= button_to "Search for Locations", new_search_path, method: :get %>
+      <%= button_to "Host Charging", new_charge_spot_path, method: :get %>
+    <% end %>
 </body>
