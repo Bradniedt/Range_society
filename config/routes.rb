@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   post '/search', to: "search#create", as: :create_search
 
   get '/map', to: "map#show"
+  get '/dashboard', to: "dashboard#show"
 
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'
     resources :users, only: [:index, :update] 
   end
+
+  resources :charge_spots, only: [:new]
 end

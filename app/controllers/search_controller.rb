@@ -5,13 +5,13 @@ class SearchController < ApplicationController
   end
 
   def create
-    coordinates = get_lat_lon(params["search_location"])
+    coordinates = get_lat_lon(cookies["coordinates"] || params["search_location"])
+    cookies.delete "coordinates";
     return handle_invalid_location(coordinates) unless coordinates
 
     session[:search] = {
       range: params[:ev_range],
       activity: params[:activity],
-      zipcode: params[:zipcode],
       lat: coordinates[:lat],
       lon: coordinates[:lon]
     }
@@ -27,10 +27,10 @@ class SearchController < ApplicationController
 
   def get_lat_lon(location)
     case location
-    when /\d{2}\.\d{7} -\d{3}\.\d{7}/ then
+    when /\d{2}\.\d{7,16} -\d{3}\.\d{7,16}/ then
       lat, lon = location.split(" ")
       return {lat: lat, lon:lon}
-    when /\d{5}/ then
+    when /^\d{5}\s*$/ then
       # will need to change this eventually if we want this to work nationally.
       result = Geocoder.search(location).select{ |place| place.data["address"]["state"] == "Colorado"}.first.data
       lat = result["lat"]
@@ -51,6 +51,4 @@ class SearchController < ApplicationController
     end
     redirect_to new_search_path
   end
-
-
 end

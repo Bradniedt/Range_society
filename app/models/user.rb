@@ -2,9 +2,7 @@ class User < ApplicationRecord
   enum role: [:default, :admin]
 
   def self.from_omniauth(access_token)
-    user = User.find_by(email: access_token["info"]["email"])
-    user = User.create(user_info_from_oauth(access_token)) unless user
-    user
+    User.create(user_info_from_oauth(access_token))
   end
 
   private
