@@ -16,8 +16,6 @@ class SearchController < ApplicationController
       lon: coordinates[:lon]
     }
 
-    binding.pry
-
     redirect_to map_path
   end
 
