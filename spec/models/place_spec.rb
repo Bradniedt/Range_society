@@ -4,7 +4,7 @@ describe Place, type: :model do
   it 'exists and has attributes', :vcr do
     @businesses = YelpService.new(39.7392, -104.9903).send(:get_businesses, "museums")
     place_data = @businesses.first
-    place = Place.new(place_data)
+    place = Place.new(place_data, "museums")
 
     expect(place.name).to eq(place_data[:name])
     expect(place.image_url).to eq(place_data[:image_url])
@@ -16,5 +16,6 @@ describe Place, type: :model do
     expect(place.location).to eq(place_data[:location])
     expect(place.display_phone).to eq(place_data[:display_phone])
     expect(place.distance).to eq(place_data[:distance])
+    expect(place.category).to eq("museums")
   end
 end
