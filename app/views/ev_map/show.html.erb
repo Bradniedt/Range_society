@@ -26,7 +26,7 @@
   const picked_location_marker = L.marker([<%= @picked_location[:latitude] %>, <%= @picked_location[:longitude] %>]).addTo(mymap);
   picked_location_marker.bindPopup("<%= @picked_location[:popup_html].gsub("\"", '\'').html_safe %>").openPopup();
   <% @ev_stations.each_with_index do |ev, i| %>
-    const <%= "marker#{i}" %> = L.marker([<%= ev.lat %>, <%= ev.lon %>] {icon: elecIcon}).addTo(mymap);
+    const <%= "marker#{i}" %> = L.marker([<%= ev.lat %>, <%= ev.lon %>], {icon: elecIcon}).addTo(mymap);
     <%= "marker#{i}" %>.bindPopup("<b><%= ev.name %></b><br><%= ev.hours %><br><%= ev.street_address %><br><%= ev.city %>").openPopup();
   <% end %>
 </script>
