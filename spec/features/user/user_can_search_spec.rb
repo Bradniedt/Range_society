@@ -14,11 +14,12 @@ describe 'as a logged in user, my path is search' do
         User.first
         range = "25"
         zip = 81401
-        category = "Museums"
 
         select(range, :from => :ev_range)
         fill_in :search_location, with: zip
-        select(category, :from => 'activity')
+        within("#museums") do
+          check("activities[]")
+        end
         click_on("Search")
         expect(current_path).to eq(map_path)
         expect(status_code).to eq(200)

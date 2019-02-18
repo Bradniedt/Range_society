@@ -14,7 +14,9 @@ feature "User Current Location" do
       visit new_search_path
 
       select "5", from: :ev_range
-      select "Food", from: :activity
+      within("#restaurants") do
+        check("activities[]")
+      end
     end
     context 'filling out form - with lat and lon - and searching' do
       it 'redirects and shows results' do
