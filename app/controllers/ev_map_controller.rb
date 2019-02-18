@@ -6,7 +6,7 @@ class EvMapController < ApplicationController
 
     @ev_search_lat = "39.7392"
     @ev_search_lon = "-104.9903"
-    ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon)
-    @ev_stations = ev_facade.public_ev_stations
+    @ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon)
+    @ev_stations = @ev_facade.public_ev_stations
   end
 end
