@@ -9,8 +9,8 @@
         <%= button_to "Sign in With Google", google_login_path, method: :get, class: "btn btn-primary" %>
       <% end %>
       <% if current_user %>
-        <%= button_to "Search for Locations", new_search_path, method: :get, class: "btn btn-primary" %>
-        <%= button_to "Host Charging", new_charge_spot_path, method: :get, class: "btn btn-primary" %>
+        <%= button_to "Search for Locations", new_search_path, method: :get, class: "btn btn-primary", id: "root-btn" %>
+        <%= button_to "Host Charging", new_charge_spot_path, method: :get, class: "btn btn-primary", id: "root-btn" %>
       <% end %>
     </div>
   </section>
