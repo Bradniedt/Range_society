@@ -10,7 +10,8 @@ describe 'As a User' do
   it 'shows dashboard' do
     visit dashboard_path
     expect(current_path).to eq(dashboard_path)
-    expect(page).to have_content("Hello #{@user.first_name}")
-    expect(page).to have_content("#{@user.first_name}'s Dashboard")
+    expect(page).to have_content("Hello #{@user_info.first_name}")
+    expect(page).to have_content("#{@user_info.first_name}'s Dashboard")
+    expect(page).to have_link("Create a Trip Log")
   end
 end
