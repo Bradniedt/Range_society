@@ -1,5 +1,5 @@
 body {
-  
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -40,7 +40,7 @@ z-index: 10000;
   position: relative;
   z-index: 1;
   width: 200px;
-  margin-left: 15%;
+  margin-left: 30%;
 }
 
 .main-container {
@@ -54,6 +54,10 @@ z-index: 10000;
   border-bottom: 1px solid #FCA311;
   margin-left: auto;
   margin-right: auto;
+}
+
+#root-btn {
+  margin-left: 15%;
 }
 
 #tagline {
