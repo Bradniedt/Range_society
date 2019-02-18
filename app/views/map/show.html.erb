@@ -30,8 +30,11 @@
            headers: {
                "Content-Type": "application/json",
            },
-           body: JSON.stringify(data),
-    });
+           redirect: "follow",
+           body: JSON.stringify(data)
+         }).then(function(response) {
+           window.location.replace(response.url);
+         });
   }
   //add a ruby iterator to iterate through a colloection like restaurants, and build a marker and bindPopup for each location.
 </script>
