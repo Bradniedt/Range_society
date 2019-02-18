@@ -8,7 +8,8 @@ class Place
               :coordinates,
               :location,
               :display_phone,
-              :distance
+              :distance,
+              :category
 
   def initialize(attributes, category)
     @name = attributes[:name]
