@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_182704) do
 
   create_table "trip_logs", force: :cascade do |t|
     t.string "title"
-    t.integer "miles"
+    t.float "miles"
     t.string "description"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_trip_logs_on_user_id"
