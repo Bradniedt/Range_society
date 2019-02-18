@@ -18,7 +18,8 @@ feature 'Login' do
       expect(created_user.email).to eq(@user_info["info"]["email"])
       expect(created_user.token).to eq(@user_info["credentials"]["token"])
       expect(created_user.refresh_token).to eq(@user_info["credentials"]["refresh_token"])
-
+      
+      expect(current_path).to eq(root_path)
       expect(page).to_not have_button("Sign in With Google")
       expect(page).to have_button("Search for Locations")
       expect(page).to have_button("Host Charging")
