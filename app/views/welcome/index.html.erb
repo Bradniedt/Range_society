@@ -6,7 +6,7 @@
       <p id="tagline">Adventure is within reach</p>
 
       <% unless current_user %>
-        <%= button_to "Sign in With Google", google_login_path, method: :get, class: "oauth-button" %>
+        <%= button_to "Sign in With Google", google_login_path, method: :get, class: "btn btn-primary" %>
       <% end %>
       <% if current_user %>
         <%= button_to "Search for Locations", new_search_path, method: :get, class: "btn btn-primary" %>
