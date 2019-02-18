@@ -1,0 +1,17 @@
+<%= form_for [:dashboard, @trip_log] do |f| %>
+  <div class="form-group">
+    <%= f.label_tag :name%>
+    <%= f.text_field :name, placeholder: "Name", class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label_tag :miles%>
+    <%= f.number_field :miles%>
+  </div>
+  <div class="form-group">
+    <%= f.label_tag 'Description'%>
+    <%= f.text_area_tag(:description, "Enter your trip description here."), size: "10x6" %>
+  </div>
+  <div class="submit-button">
+    <%= f.submit, "Make New Trip" %>
+  </div>
+<% end %>
