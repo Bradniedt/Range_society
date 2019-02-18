@@ -21,7 +21,7 @@ describe EvStationFacade do
     lon = "-104.9903"
     evsf = EvStationFacade.new(lat, lon)
 
-    expect(evsf.public_ev_stations.count).to eq(14)
+    expect(evsf.public_ev_stations.count).to eq(20)
     expect(evsf.public_ev_stations.first).to be_a(EvStation)
   end
 end

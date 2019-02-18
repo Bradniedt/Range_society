@@ -78,7 +78,7 @@ def stub_omniauth
     "provider" => 'google_oauth2',
     "info" => {
       "name"=>"Ricardo Ledesma",
-      "email"=>"ricardoledesmadev@gmail.com",
+      "email"=>"ricardoledesma@mail.com",
       "first_name"=>"Ricardo",
       "last_name"=>"Ledesma"
     },

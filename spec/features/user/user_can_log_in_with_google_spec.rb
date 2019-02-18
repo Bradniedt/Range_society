@@ -10,7 +10,7 @@ feature 'Google Sign In' do
     end
     it 'goes through oauth process, creates a user, and redirects to new_search_path' do
       expect(page).to have_content("You're logged in Ricardo")
-      expect(current_path).to eq(new_search_path)
+      expect(current_path).to eq(root_path)
       created_user = User.first
 
       expect(User.count).to eq(1)
