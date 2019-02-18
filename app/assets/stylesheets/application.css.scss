@@ -1,0 +1,22 @@
+@import 'bootstrap';
+@import '_welcome';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+  width: 100vw;
+  height: 100vh;
+}
+#mapid { height: 100vh; }
+.navbar {
+  @media screen and (max-width: 320px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @media screen and (min-width: 321px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

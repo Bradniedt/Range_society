@@ -1,20 +1,24 @@
 body {
-  background: url('welcome_splash.jpg') no-repeat center center fixed;
+  background: asset-data-url('welcome_splash.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 h1 {
+  padding: 25px;
   text-align: center;
-  color: white
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
 p {
   text-align: center;
-  color: white
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
-oauth-button {
-  bottom: 10px;
-  width: 50%;
-  border: 3px solid #8AC007;
+.oauth-button {
+  position: fixed;
+  left: 45%;
+  bottom: 30%;
+  border: 2px solid black;
 }
