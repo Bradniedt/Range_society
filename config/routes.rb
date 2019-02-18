@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   get '/search', to: "search#new", as: :new_search
   post '/search', to: "search#create", as: :create_search
+  post '/ev_search', to: "ev_search#create", as: :create_ev_search
 
   post '/ev_search', to: 'ev_search#create', as: :create_ev_search
   get '/map', to: "map#show"
   get '/ev_map', to: "ev_map#show"
-  get '/dashboard', to: "dashboard#show"
+  get '/dashboard', to: "users#show"
 
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'

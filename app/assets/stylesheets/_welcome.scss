@@ -4,6 +4,11 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
 }
 h1 {
   padding: 25px;
@@ -21,4 +26,40 @@ p {
   left: 45%;
   bottom: 30%;
   border: 2px solid black;
+}
+
+.navbar .nav > li .navbar-toggle {
+z-index: 10000;
+}
+
+// .col {
+//   width: 200px;
+// }
+
+.btn {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  margin-left: 15%;
+}
+
+.main-container {
+  width: 60%;
+  margin-left: 20%;
+  height: 200px;
+  width: 300px;
+  margin-top: 4em;
+  margin-bottom: -200px;
+  border-top: 1px solid #FCA311;
+  border-bottom: 1px solid #FCA311;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tagline {
+  margin-top: 5%;
+  color: #333138;
+  font-weight: bold;
+  font-size: 1.25em;
+  z-index: 1;
 }

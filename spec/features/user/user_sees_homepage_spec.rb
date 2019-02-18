@@ -7,7 +7,7 @@ feature 'Visiting Homepage' do
     end
     it 'shows app name, tag line, and synopsis' do
       expect(page).to have_content("Range Society")
-      expect(page).to have_content("Live Within Reach")
+      expect(page).to have_content("Adventure is within reach")
     end
   end
 end

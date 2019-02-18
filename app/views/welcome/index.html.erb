@@ -1,36 +1,21 @@
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Page Content -->
-  <section>
+  <section class="opacity">
     <div class="main-container">
-      <h1 class="mt-5">Range Society</h1>
-      <p>Live Within Reach</p>
+      <div class="opaque"></div>
+      <p id="tagline">Adventure is within reach</p>
+
+      <% unless current_user %>
+        <%= button_to "Sign in With Google", google_login_path, method: :get, class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user %>
+        <%= button_to "Search for Locations", new_search_path, method: :get, class: "btn btn-primary" %>
+        <%= button_to "Host Charging", new_charge_spot_path, method: :get, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </section>
 
-  <section>
+  <!-- <section>
     <div class="oauth-button">
       <html>
     <div id="my-signin2"></div>
@@ -55,13 +40,7 @@
     </script>
 
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    </div>
-  </section>
-    <% unless current_user %>
-      <%= button_to "Sign in With Google", google_login_path, method: :get %>
-    <% end %>
-    <% if current_user %>
-      <%= button_to "Search for Locations", new_search_path, method: :get %>
-      <%= button_to "Host Charging", new_charge_spot_path, method: :get %>
-    <% end %>
+    </div> -->
+  <!-- </section> -->
+
 </body>
