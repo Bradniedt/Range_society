@@ -13,11 +13,12 @@ describe 'As a User' do
 
     expect(current_path).to eq(new_dashboard_trip_log_path)
   end
-  xit 'shows a form to create a new trip log' do
-
-
+  it 'shows a form to create a new trip log' do
     click_on "Create a Trip Log"
 
-
+    expect(page).to have_content("Title")
+    expect(page).to have_content("Miles")
+    expect(page).to have_content("Description")
+    expect(page).to have_button("Create Trip Log")
   end
 end
