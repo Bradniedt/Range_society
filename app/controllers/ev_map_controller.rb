@@ -1,12 +1,16 @@
 class EvMapController < ApplicationController
-  def show
-    # this will ultimately be something like this, have to hard code for now
-    # @ev_search_lat = session[:ev_search]["latitude"]
-    # @ev_search_lon = session[:ev_search]["longitude"]
+  skip_before_action :verify_authenticity_token
+  before_action :require_user
 
-    @ev_search_lat = "39.7392"
-    @ev_search_lon = "-104.9903"
+  def show
+    @ev_search_lat = session[:ev_search]["latitude"]
+    @ev_search_lon = session[:ev_search]["longitude"]
     @ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon)
     @ev_stations = @ev_facade.public_ev_stations
+    @picked_location = {
+      latitude: @ev_search_lat,
+      longitude: @ev_search_lon,
+      popup_html: session[:picked_location_html]
+    }
   end
 end
