@@ -11,7 +11,7 @@ describe 'As a User' do
   it 'can click on a link to create a new trip log' do
     click_on "Create a Trip Log"
 
-    expect(current_path).to eq(new_trip_log_path)
+    expect(current_path).to eq(new_dashboard_trip_log_path)
   end
   xit 'shows a form to create a new trip log' do
 
