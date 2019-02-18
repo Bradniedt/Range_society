@@ -39,6 +39,8 @@ VCR.configure do |c|
   c.ignore_localhost = true
   c.allow_http_connections_when_no_cassette = true
   c.configure_rspec_metadata!
+  c.filter_sensitive_data("<MAPBOX_KEY>") { ENV['MAPBOX_KEY'] }
+  c.filter_sensitive_data("<NREL_API_KEY>") { ENV['NREL_API_KEY'] }
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
