@@ -24,5 +24,4 @@ class NrelService
   def response
     conn.get("/api/alt-fuel-stations/v1/nearest.json/")
   end
-
 end

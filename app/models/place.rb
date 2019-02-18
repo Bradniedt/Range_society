@@ -8,9 +8,10 @@ class Place
               :coordinates,
               :location,
               :display_phone,
-              :distance
+              :distance,
+              :category
 
-  def initialize(attributes)
+  def initialize(attributes, category)
     @name = attributes[:name]
     @image_url = attributes[:image_url]
     @is_closed = attributes[:is_closed]
@@ -21,6 +22,7 @@ class Place
     @location = attributes[:location]
     @display_phone = attributes[:display_phone]
     @distance = attributes[:distance]
+    @category = category
   end
 
   def display_address
@@ -28,6 +30,6 @@ class Place
   end
 
   def popup_html
-    "<p><b>#{name}</b></p><b>Address:</b> #{display_address}</p><p><a href='#{url}'>View on Yelp</a></p>"
+    "<div class='popup'><p><b>#{name}</b></p><b>Address:</b> #{display_address}</p><p><a href='#' onclick='return chooseLocal(event);' data-coords='#{coordinates[:latitude]} #{coordinates[:longitude]}'>Choose this Location</a><a href='#{url}'>View on Yelp</a></p></div>"
   end
 end
