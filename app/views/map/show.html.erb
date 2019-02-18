@@ -13,5 +13,28 @@
     const <%= "marker#{i}" %> = L.marker([<%= biz.coordinates[:latitude] %>, <%= biz.coordinates[:longitude] %>]).addTo(mymap);
     <%= "marker#{i}" %>.bindPopup("<%= biz.popup_html.html_safe %>").openPopup();
   <% end %>
+
+  function chooseLocal(event) {
+    event.preventDefault();
+    const url = `${event.currentTarget.origin}/ev_search`;
+    const popup_html = document.getElementsByClassName('popup')[0].innerHTML;
+    const coordinates = `${event.currentTarget.dataset.coords}`;
+
+    const data = {
+      coordinates,
+      popup_html
+    }
+
+    fetch(url, {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json",
+           },
+           redirect: "follow",
+           body: JSON.stringify(data)
+         }).then(function(response) {
+           window.location.replace(response.url);
+         });
+  }
   //add a ruby iterator to iterate through a colloection like restaurants, and build a marker and bindPopup for each location.
 </script>
