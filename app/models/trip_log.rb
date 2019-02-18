@@ -1,4 +1,5 @@
 class TripLog < ApplicationRecord
-  verifies_presence_of :title, :miles
+  validates :title, uniqueness: true
+  validates :miles, presence: true, numericality: { only_float: true }
   belongs_to :user
 end
