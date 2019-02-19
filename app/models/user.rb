@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :trip_logs
+  has_many :user_destinations
+  has_many :destinations, through: :user_destinations
   enum role: [:default, :admin]
 
   def self.from_omniauth(access_token)
