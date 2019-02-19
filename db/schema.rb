@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_182704) do
+ActiveRecord::Schema.define(version: 2019_02_19_220218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "location"
+  end
 
   create_table "trip_logs", force: :cascade do |t|
     t.string "title"
