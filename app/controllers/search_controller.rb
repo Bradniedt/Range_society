@@ -8,10 +8,10 @@ class SearchController < ApplicationController
     coordinates = get_lat_lon(cookies["coordinates"] || params["search_location"])
     cookies.delete "coordinates";
     return handle_invalid_location(coordinates) unless coordinates
-
+    activities = params["activities"].map { |p| eval(p).values}.flatten
     session[:search] = {
       range: params[:ev_range],
-      activity: params[:activity],
+      activity: activities,
       lat: coordinates[:lat],
       lon: coordinates[:lon]
     }

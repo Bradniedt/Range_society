@@ -1,11 +1,17 @@
-<%= form_tag create_search_path, id: "search-form" do %>
-  <p><%= label_tag :ev_range, "Your EV Range (in miles)" %></p>
-  <p><%= select_tag :ev_range, options_for_select(ranges) %></p>
-  <p><%= label_tag :activity, "Activity" %></p>
-  <p><%= select_tag :activity, options_for_select(activities) %></p>
-  <p><%= label_tag :search_location, "Enter Zip Code" %></p>
-  <p><%= text_field_tag :search_location, nil, placeholder: "Enter Zip", id: "search-location" %></p>
-  <p><%= button_tag "Use Current Location", type: "button", id: "current-location" %></p>
-  <p><%= submit_tag "Search", id: "submit-search" %></p>
-<% end %>
+<div class="form">
+  <%= form_tag create_search_path, id: "search-form" do %>
+    <p><%= label_tag :ev_range, "Your EV Range (in miles):" , class: "form-text"%></p>
+    <p><%= select_tag :ev_range, options_for_select(ranges), class: "form-control" %></p>
+    <p id="restaurants"><%= label_tag :activities, "Restaurants:" , class: "form-text checks" %>
+    <%= check_box_tag("activities[]", value: "restaurants") %></p>
+    <p id="museums"><%= label_tag :activities, "Museums:" , class: "form-text checks"%>
+    <%= check_box_tag("activities[]", value: "museums") %></p>
+    <p id="parks"><%= label_tag :activities, "Parks:" , class: "form-text checks"%>
+    <%= check_box_tag("activities[]", value: "parks") %></p>
+    <p><%= label_tag :search_location, "Enter Zip Code:" , class: "form-text"%></p>
+    <p><%= text_field_tag :search_location, nil, placeholder: "Enter Zip", id: "search-location", class: "form-control" %></p>
+    <p><%= button_tag "Use Current Location", type: "button", id: "current-location", class: "btn btn-primary" %></p>
+    <p><%= submit_tag "Search", id: "submit-search", class: "btn btn-primary" %></p>
+  <% end %>
+</div>
 <%= javascript_include_tag 'event_listeners' %>
