@@ -3,6 +3,7 @@ class MapController < ApplicationController
     @lat = session[:search]["lat"]
     @lon = session[:search]["lon"]
     @service = YelpService.new(@lat, @lon)
-    @businesses = @service.businesses_search(session[:search]["activity"])
+    activities = session[:search]["activity"]
+    @businesses = @service.businesses_search(activities)
   end
 end

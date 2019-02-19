@@ -11,16 +11,19 @@ describe 'as a logged in user, my path is search' do
   it 'i see a form with following fields' do
     range = "25"
     zip = 81401
-    category = "Food"
 
     expect(current_path).to eq(new_search_path)
     expect(page).to have_content("Your EV Range (in miles)")
     expect(page).to have_content("Enter Zip Code")
-    expect(page).to have_content("Activity")
+    expect(page).to have_content("Restaurants:")
+    expect(page).to have_content("Museums:")
+    expect(page).to have_content("Parks:")
 
     select(range, :from => 'ev_range')
     fill_in :search_location, with: zip
-    select(category, :from => 'activity')
+    within("#restaurants") do
+      check("activities[]")
+    end
 
     expect(page).to have_button("Search")
     click_button "Search"

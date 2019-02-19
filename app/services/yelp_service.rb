@@ -14,10 +14,9 @@ class YelpService
   end
 
   def businesses_search(categories, sort_by='distance')
-    search_categories = categories.split(",")
-    limit = 24 / search_categories.length
+    limit = 24 / categories.length
 
-    search_categories.map do |c|
+    categories.map do |c|
       create_places(get_businesses(c, nil, limit, sort_by), c)
     end.flatten
   end
