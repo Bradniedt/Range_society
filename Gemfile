@@ -42,6 +42,7 @@ gem 'travis'
 gem 'geocoder'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'dalli'
 
 group :test do
   gem 'rake'
