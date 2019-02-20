@@ -17,10 +17,10 @@ Contributors:
 
 ## Learning Goals
 
-* Learning how to build a full Rails app from idea to delivery
+* Understanding how to build a full Rails app from idea to delivery
 * Revisiting previous concepts such as APIs and OAuth
-* Finding the strengths and gaps in your knowledge of Ruby, Rails, and organizing a project.
-* Use an agile process as you develop features
+* Finding the strengths and gaps in knowledge of Ruby, Rails, and organizing a project.
+* Using an agile process as features are developed
 * Configure a continuous integration server (We used `Travis CI`)
 
 ## Getting Started && Prerequisites
@@ -63,7 +63,7 @@ bundle update
 Establish a database:
 
 ```
-rake db:{drop,create,migrate,seed}
+rake db:{drop,create,migrate}
 ```
 Start your server:
 
@@ -78,7 +78,7 @@ Open your browser (best functionality in Chrome).
 Welcome to our dev environment!
 
 
-## Running the tests
+## Testing
 
 Your location should be the root directory of the project (`Range_society`).
 
