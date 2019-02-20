@@ -1,0 +1,8 @@
+<table>
+  <th>Top Range Society Carbon Savers</th>
+  <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td>User: <%= user.first_name %></td><td>Carbon Saved: <%= user.carbon_saved %>kg</td>
+    </tr>
+  <% end %>
+</table>
