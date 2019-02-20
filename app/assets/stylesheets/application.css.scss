@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import '_welcome';
 @import '_search';
+@import '_dashboard';
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
@@ -12,28 +13,28 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
-  padding-top: 65px;
-  background: linear-gradient(129deg, #3dac5a, #dde300);
-  background-size: 400% 400%;
+  // padding-top: 65px;
+  background: linear-gradient(180deg, #4d9450, #5a97b4, #5a60b7);
+  background-size: 600% 600%;
 
-  -webkit-animation: AnimationName 8s ease infinite;
-  -moz-animation: AnimationName 8s ease infinite;
-  animation: AnimationName 8s ease infinite;
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
 
   @-webkit-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
   }
   @-moz-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
   }
   @keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:51% 0%}
+      50%{background-position:50% 100%}
+      100%{background-position:51% 0%}
   }
 }
 h1 {
@@ -46,6 +47,31 @@ h1 {
 .navbar .nav > li {
   z-index: 10000;
   background: #333138;
+}
+
+.btn {
+  background: #4FB54F;
+  color: #333138;
+  border: 1px solid #333138;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    border: 1px solid #FCA311;
+    background: none;
+}
+
+.btn-sample:active {
+  box-shadow: none;
+  background: none;
+  color: #333138;
+}
+
+.nav-link:hover{
+    color: #FCA311;
+}
+
+#title {
+  color: #4FB54F;
 }
 
 #mapid { height: 100vh; }
