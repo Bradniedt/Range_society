@@ -15,7 +15,7 @@ describe 'As a User' do
   end
   it 'shows me my ten most recent destinations' do
     user = User.last
-    place1 = user.destinations.create(name: "1place", location: "1location")
+    place1 = user.destinations.create(name: "1place", location: "1location", created_at: 1.days.ago)
     place2 = user.destinations.create(name: "2place", location: "2location")
     place3 = user.destinations.create(name: "3place", location: "3location")
     place4 = user.destinations.create(name: "4place", location: "4location")
@@ -29,9 +29,9 @@ describe 'As a User' do
 
     visit dashboard_path
     expect(current_path).to eq(dashboard_path)
-    expect(page).to have_content("Most Recent Destinations:")
     expect(page).to have_css('.destination', count: 10)
     within('.recent_destinations') do
+      expect(page).to have_content("Most Recent Destinations:")
       expect(page).to have_content(place2.name)
       expect(page).to have_content(place3.name)
       expect(page).to have_content(place4.name)
@@ -42,6 +42,6 @@ describe 'As a User' do
       expect(page).to have_content(place9.name)
       expect(page).to have_content(place10.name)
       expect(page).to have_content(place11.name)
-    end 
+    end
   end
 end
