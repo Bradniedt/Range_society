@@ -17,7 +17,7 @@ Rails.application.configure do
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.static_cache_control = "public, max-age=172800"
-    config.cache_store = :mem_cache_store
+    config.cache_store = :memory_store, { size: 64.megabytes }
   else
     config.action_controller.perform_caching = false
     config.cache_store = :null_store
