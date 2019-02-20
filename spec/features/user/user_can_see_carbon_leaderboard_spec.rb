@@ -30,14 +30,18 @@ describe 'As a visitor when i visit the root path' do
 
     expect(current_path).to eq(leaderboard_path)
     expect(page).to have_content("Top Range Society Carbon Savers")
-    expect(page).to have_css("leaders", count: 2)
+    expect(page).to have_css(".leaders", count: 2)
 
-    within "user-1" do
-      expect(page).to have_content("User: #{u1.first_name}")
+    within ".user-1" do
+      expect(page).to have_content("Carbon Saver: #{u1.first_name}")
+    end
+    within ".user-1-carbon" do
       expect(page).to have_content("Carbon Saved: #{u1.carbon_saved}")
     end
-    within "user-0" do
-      expect(page).to have_content("User: #{u2.first_name}")
+    within ".user-0" do
+      expect(page).to have_content("Carbon Saver: #{u2.first_name}")
+    end
+    within ".user-0-carbon" do
       expect(page).to have_content("Carbon Saved: #{u2.carbon_saved}")
     end
   end
