@@ -8,6 +8,10 @@ class User < ApplicationRecord
     User.create(user_info_from_oauth(access_token))
   end
 
+  def last_ten
+    destinations.order(created_at: :desc).limit(10)
+  end
+
   private
 
   def self.user_info_from_oauth(access_token)
