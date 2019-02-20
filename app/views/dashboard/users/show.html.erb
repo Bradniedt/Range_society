@@ -5,3 +5,14 @@
 <div class="col">
 <%= link_to 'Create a Trip Log', new_dashboard_trip_log_path, class: "btn btn-primary"%>
 </div>
+
+<% unless @user.destinations.empty? %>
+  <div class="recent_destinations">
+    <h4>Most Recent Destinations:</h4>
+    <ul>
+    <% @destinations.reverse.each do |d| %>
+      <li class="destination"><%= d.name %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
