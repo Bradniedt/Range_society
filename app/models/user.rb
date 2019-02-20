@@ -12,6 +12,14 @@ class User < ApplicationRecord
     destinations.order(created_at: :desc).limit(10)
   end
 
+  def self.top_carbon_savers(limit = 10)
+    User.joins(:trip_logs).select("users.*, sum(trip_logs.miles) as carbon_saved").group("users.id").order("carbon_saved desc").limit(limit)
+  end
+
+  def carbon_saved
+    (((self.trip_logs.sum(:miles)) * 404.0) / 1000).round(3)
+  end
+
   private
 
   def self.user_info_from_oauth(access_token)
@@ -23,4 +31,5 @@ class User < ApplicationRecord
       refresh_token: access_token["credentials"]["refresh_token"]
     }
   end
+
 end
