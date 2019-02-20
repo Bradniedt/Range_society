@@ -1,14 +1,97 @@
-.btn {
-  margin-left: 0%;
+
+
+@media screen and (min-width: 768px) {
+
+  .checks {
+    display: inline;
+  }
+
+  .form-control {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: -15px;
+    background: D0D3D2;
+  }
+
+  .navbar .nav > li .navbar-toggle {
+  z-index: 10000;
+  }
+
+  .col {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .btn, {
+    width: 90%;
+  }
+
+  .recent_destinations {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+  }
+
+  .recent_destinations ul {
+    text-align: left;
+  }
+
+  input#activities_ {
+    margin-left: 5%;
+  }
+
 }
 
-.form-control {
-  width: 15%;
-  margin-left: 42.5%;
-  margin-top: -15px;
-  background: D0D3D2;
-}
+@media screen and (max-width: 768px) {
 
-.checks {
-  display: inline;
+  .checks {
+    display: inline;
+  }
+
+  .form-control {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: -15px;
+    background: D0D3D2;
+  }
+
+  .navbar .nav > li .navbar-toggle {
+  z-index: 10000;
+  }
+
+  .col {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .btn, {
+    width: 90%;
+  }
+
+  .recent_destinations {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+  }
+
+  .recent_destinations ul {
+    text-align: left;
+  }
+
+  input#activities_ {
+    margin-left: 5%;
+  }
+
 }

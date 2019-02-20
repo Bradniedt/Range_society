@@ -41,7 +41,7 @@ body {
 @media screen and (max-width: 768px) {
 
   body {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   h1 {
@@ -66,7 +66,7 @@ body {
     border: 1px solid #333138;
   }
 
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  .root-btn:hover, .root-btn:focus, .root-btn:active, .root-btn.active {
       border: 1px solid #FCA311;
       background: none;
   }
@@ -86,4 +86,54 @@ body {
   }
 
   #mapid { height: 100vh; }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    padding: 25px;
+    text-align: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .navbar .nav > li {
+    z-index: 10000;
+    background: #333138;
+  }
+
+  .btn {
+    background: #4FB54F;
+    color: #333138;
+    border: 1px solid #333138;
+  }
+
+  .root-btn:hover, .root-btn:focus, .root-btn:active, .root-btn.active {
+      border: 1px solid #FCA311;
+      background: none;
+  }
+
+  .btn-sample:active {
+    box-shadow: none;
+    background: none;
+    color: #333138;
+  }
+
+  .nav-link:hover{
+    color: #FCA311;
+  }
+
+  #title {
+    color: #4FB54F;
+  }
+
+  #mapid { height: 100vh; }
+
 }
