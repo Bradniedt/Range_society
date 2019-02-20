@@ -4,7 +4,6 @@
     <div class="main-container">
       <div class="opaque"></div>
       <p id="tagline">Adventure is within reach</p>
-
       <% unless current_user %>
         <%= button_to "Sign in With Google", google_login_path, method: :get, class: "btn btn-primary", id: "root-btn"  %>
       <% end %>
@@ -14,33 +13,4 @@
       <% end %>
     </div>
   </section>
-
-  <!-- <section>
-    <div class="oauth-button">
-      <html>
-    <div id="my-signin2"></div>
-    <script>
-      // function onSuccess(googleUser) {
-      //   console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-      // }
-      // function onFailure(error) {
-      //   console.log(error);
-      // }
-      // function renderButton() {
-      //   gapi.signin2.render('my-signin2', {
-      //     'scope': 'profile email',
-      //     'width': 240,
-      //     'height': 50,
-      //     'longtitle': true,
-      //     'theme': 'dark',
-      //     'onsuccess': onSuccess,
-      //     'onfailure': onFailure
-      //   });
-      // }
-    </script>
-
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    </div> -->
-  <!-- </section> -->
-
 </body>
