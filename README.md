@@ -28,7 +28,7 @@ Contributors:
 ### Implementing OAuth
 
 * Google OAuth requirements:
-  Sign up for Google OAuth, recieve a client id and secret defined within as `ENV['CLIENT_ID']` & `ENV['CLIENT_SECRET']`
+  Sign up for Google OAuth, receive a client id and secret defined within as `ENV['CLIENT_ID']` & `ENV['CLIENT_SECRET']`
 
 ###### API Keys Required:
 
