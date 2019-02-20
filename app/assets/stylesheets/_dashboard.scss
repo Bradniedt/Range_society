@@ -1,14 +1,42 @@
-.navbar .nav > li .navbar-toggle {
-z-index: 10000;
-}
+@media screen and (max-width: 768px) {
+  .col {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
 
-.btn, .name {
-  margin-left: 40%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
+  h4 {
+    border-bottom: 1px solid #FCA311;
+    padding-bottom: 3%;
+    margin-top: 5%;
+  }
 
-.recent_destinations {
-  margin-left: 40%;
-  list-style: none;
+  .navbar .nav > li .navbar-toggle {
+  z-index: 10000;
+  }
+
+  .col {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .btn, {
+    width: 90%;
+  }
+
+  .recent_destinations {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+  }
+
+  .recent_destinations ul {
+    text-align: left;
+  }
+
 }
