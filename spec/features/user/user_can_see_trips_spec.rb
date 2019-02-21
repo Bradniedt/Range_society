@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'as a logged in user, my path is search' do
-  describe 'when i fill the search params and click search' do
+describe 'as a logged in user' do
+  describe 'when i visit my dashboard' do
     before :each do
       visit root_path
       Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
