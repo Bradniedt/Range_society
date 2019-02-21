@@ -44,4 +44,22 @@ describe 'As a User' do
       expect(page).to have_content(place11.name)
     end
   end
+  it 'should see my trip and carbon stats' do
+    user = User.last
+    t1 = user.trip_logs.create(title: "movies", miles: 7, description: "new quentin tarantino movie")
+    t2 = user.trip_logs.create(title: "visit mom", miles: 25, description: "drove out to visit my mom")
+    visit dashboard_path
+
+    expect(page).to have_content("Your Stats")
+    within('.stats') do
+      expect(page).to have_content("Average Trip Length")
+      expect(page).to have_content(user.average_trip)
+      expect(page).to have_content("Average Carbon Saved")
+      expect(page).to have_content(user.average_carbon)
+      expect(page).to have_content("Total Trip Mileage")
+      expect(page).to have_content(user.total_trip)
+      expect(page).to have_content("Total Carbon Saved")
+      expect(page).to have_content(user.total_carbon)
+    end
+  end 
 end

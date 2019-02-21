@@ -1,10 +1,17 @@
-<h1>All of Your Trips</h1>
-<div class="trip-log-list">
+<h1>My Trips</h1>
+<div class="trip-log-list my-trips">
+  <table>
+    <th>Title:</th>
+    <th>Length (miles):</th>
+    <th>Description:</th>
+    <th>Carbon Saved (kg):</th>
   <% @trip_logs.each do |trip_log| %>
-  <div id="trip-log">
-    <%= trip_log.title %>
-    <%= trip_log.miles %>
-    <%= trip_log.description %>
-  </div>
+    <tr id="trip-log">
+      <td><%= trip_log.title %></td>
+      <td><%= trip_log.miles %></td>
+      <td><%= trip_log.description %></td>
+      <td><%= trip_log.carbon_saved %></td>
+    </tr>
   <% end %>
+  </table>
 </div>

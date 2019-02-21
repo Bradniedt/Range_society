@@ -14,4 +14,4 @@ class UserDecorator < Draper::Decorator
   def last_ten_destinations
     object.destinations.limit(10).order(id: :desc)
   end
-end
+end 

@@ -1,7 +1,7 @@
 <div class="col"
   <h1 class="name"> <%= @user.first_name %>'s Dashboard </h1>
 </div>
-<div class="col">
+<div>
 <%= link_to 'Create a Trip Log', new_dashboard_trip_log_path, class: "btn btn-primary"%>
 </div>
 
@@ -9,3 +9,23 @@
   <h2>Most Recent Destinations:</h2>
   <%= user.list_last_ten %>
 </div>
+
+  <h3 id="stats">Your Stats</h3>
+  <table class="stats">
+  <tr>
+    <td>Average Trip Length</td>
+    <td><%= @user.average_trip %></td>
+  </tr>
+  <tr>
+    <td>Average Carbon Saved</td>
+    <td><%= @user.average_carbon %></td>
+  </tr>
+  <tr>
+    <td>Total Trip Mileage</td>
+    <td><%= @user.total_trip %></td>
+  </tr>
+  <tr>
+    <td>Total Carbon Saved</td>
+    <td><%= @user.total_carbon %></td>
+  </tr>
+</table>
