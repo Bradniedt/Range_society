@@ -29,5 +29,49 @@ describe User, type: :model do
       expect(user.last_ten.last).to eq(place2)
       expect(user.last_ten.first).to eq(place11)
     end
+    it 'carbon_saved' do
+      u1 = User.create!(first_name: "Ricardo",
+                           last_name: "Ledesma",
+                           email: "ricardoledesma@mail.com",
+                           token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                           refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                           role: "default",
+                           status: true)
+      u1.trip_logs.create!(title: "movies", miles: 7, description: "new quentin tarantino movie")
+      u1.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+      answer = 10.908
+
+      expect(u1.carbon_saved).to eq(answer)
+    end
+    describe "class methods" do
+      it 'top_carbon_savers' do
+        u1 = User.create!(first_name: "Ricardo",
+                             last_name: "Ledesma",
+                             email: "ricardoledesma@mail.com",
+                             token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                             refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                             role: "default",
+                             status: true)
+        u2 = User.create!(first_name: "Leigh",
+                             last_name: "Cepriano",
+                             email: "crdfgs@mail.com",
+                             token: "sdafwerwe;lkasdjf",
+                             refresh_token: "sdkljerwerweirdijfodi",
+                             role: "default",
+                             status: true)
+        u3 = User.create!(first_name: "mary",
+                             last_name: "g",
+                             email: "crfdgple@mail.com",
+                             token: "sdafjsd;lkfjaksdfsdfsdfsdl;sdjf;lkasdjf",
+                             refresh_token: "sdkljfa;dfs",
+                             role: "default",
+                             status: true)
+        u1.trip_logs.create!(title: "movies", miles: 7, description: "new quentin tarantino movie")
+        u2.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+        u3.trip_logs.create!(title: "park", miles: 4, description: "fun picnic!")
+
+        expect(User.top_carbon_savers(2)).to eq([u2, u1])
+      end
+    end
   end
 end
