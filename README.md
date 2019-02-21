@@ -90,6 +90,7 @@ From the command line run `rspec`
 
 We used `rspec`, `capybara`, `launchy`, `vcr`, `shoulda-matchers`, and `simplecov` for testing.
 
+## Examples
 ##### Model, Service, Facade:
 
 ![user model](/.readme/user.jpg)
