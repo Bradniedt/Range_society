@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   get '/about', to: "about#index", as: :about
 
+  get '/leaderboard', to: "leaderboard#index"
+  get '/logout', to: 'sessions#destroy', as: "logout"
+
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'
     resources :users, only: [:index, :update]

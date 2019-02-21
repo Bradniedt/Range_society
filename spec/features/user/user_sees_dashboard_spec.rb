@@ -31,7 +31,7 @@ describe 'As a User' do
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_css('.destination', count: 10)
     within('.recent_destinations') do
-      expect(page).to have_content("Most Recent Destinations:")
+      expect(page).to have_content("Most Recent Destinations")
       expect(page).to have_content(place2.name)
       expect(page).to have_content(place3.name)
       expect(page).to have_content(place4.name)
