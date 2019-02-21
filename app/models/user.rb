@@ -20,6 +20,22 @@ class User < ApplicationRecord
     (((self.trip_logs.sum(:miles)) * 404.0) / 1000).round(3)
   end
 
+  def average_trip
+    ((self.trip_logs.sum(:miles)) / self.trip_logs.size).round(3)
+  end
+
+  def average_carbon
+    ((((self.trip_logs.sum(:miles)) * 404) / 1000) / self.trip_logs.size).round(3)
+  end
+
+  def total_trip
+    self.trip_logs.sum(:miles)
+  end
+
+  def total_carbon
+    ((self.trip_logs.sum(:miles) * 404) / 1000).round(3)
+  end
+
   private
 
   def self.user_info_from_oauth(access_token)
