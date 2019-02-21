@@ -9,3 +9,11 @@
   <h2>Most Recent Destinations:</h2>
   <%= user.list_last_ten %>
 </div>
+
+<div class="stats">
+  <h2>Your Stats</h2>
+  <p>Average Trip Length <%= @user.average_trip %></p>
+  <p>Average Carbon Saved <%= @user.average_carbon %></p>
+  <p>Total Trip Mileage <%= @user.total_trip %></p>
+  <p>Total Carbon Saved<%= @user.total_carbon %></p>
+</div>

@@ -33,7 +33,7 @@ describe 'As a User' do
     click_on 'Create Trip Log'
 
     expect(current_path).to eq(dashboard_trip_logs_path)
-    expect(page).to have_content('All of Your Trips')
+    expect(page).to have_content('My Trips')
     expect(page).to have_content('Best Trip Ever')
     expect(page).to have_content(454.4)
     expect(page).to have_content('Trip Log 1')
