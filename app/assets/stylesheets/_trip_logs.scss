@@ -22,6 +22,17 @@ input#trip_log_miles, textarea#trip_log_description {
     color: white;
 }
 
+th, td {
+  border: 1px solid #FCA311;
+  margin: 2%;
+  text-align: center;
+}
+
+table {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 3%;
+}
 
 
 @media screen and (min-width: 768px) {
