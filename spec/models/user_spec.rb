@@ -69,7 +69,7 @@ describe User, type: :model do
 
       expect(u1.average_carbon).to eq(5.252)
     end
-    it 'average_trip' do
+    it 'total_trip' do
       u1 = User.create!(first_name: "Ricardo",
                            last_name: "Ledesma",
                            email: "ricardoledesma@mail.com",
@@ -82,7 +82,7 @@ describe User, type: :model do
 
       expect(u1.total_trip).to eq(26)
     end
-    it 'average_carbon' do
+    it 'total_carbon' do
       u1 = User.create!(first_name: "Ricardo",
                            last_name: "Ledesma",
                            email: "ricardoledesma@mail.com",
