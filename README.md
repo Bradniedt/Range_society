@@ -9,11 +9,11 @@ Contributors:
 * Mary Goodhart
 * Ricardo Ledesma
 
-![RangeSociety](/.readme/mixology.jpg)
+![RangeSociety]()
 
 #blurb about what our app is
 
-![RangeSociety](/.readme/cocktails.jpg)
+![RangeSociety]()
 
 ## Learning Goals
 
