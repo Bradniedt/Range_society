@@ -14,7 +14,7 @@ class EvMapController < ApplicationController
     }
 
     if first_or_changed_search?(@ev_search_lat, @ev_search_lon)
-      @ev_stations = make_api_call(@ev_facade, :public_ev_stations)
+      @ev_stations = make_api_call(@ev_facade, :ev_stations)
       Cache.save_to_cache({
         ev_stations: @ev_stations,
         ev_lat: @ev_search_lat,
