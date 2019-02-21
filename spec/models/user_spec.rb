@@ -43,6 +43,58 @@ describe User, type: :model do
 
       expect(u1.carbon_saved).to eq(answer)
     end
+    it 'average_trip' do
+      u1 = User.create!(first_name: "Ricardo",
+                           last_name: "Ledesma",
+                           email: "ricardoledesma@mail.com",
+                           token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                           refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                           role: "default",
+                           status: true)
+      u1.trip_logs.create!(title: "movies", miles: 6, description: "new quentin tarantino movie")
+      u1.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+
+      expect(u1.average_trip).to eq(13)
+    end
+    it 'average_carbon' do
+      u1 = User.create!(first_name: "Ricardo",
+                           last_name: "Ledesma",
+                           email: "ricardoledesma@mail.com",
+                           token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                           refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                           role: "default",
+                           status: true)
+      u1.trip_logs.create!(title: "movies", miles: 6, description: "new quentin tarantino movie")
+      u1.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+
+      expect(u1.average_carbon).to eq(5.252)
+    end
+    it 'average_trip' do
+      u1 = User.create!(first_name: "Ricardo",
+                           last_name: "Ledesma",
+                           email: "ricardoledesma@mail.com",
+                           token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                           refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                           role: "default",
+                           status: true)
+      u1.trip_logs.create!(title: "movies", miles: 6, description: "new quentin tarantino movie")
+      u1.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+
+      expect(u1.total_trip).to eq(26)
+    end
+    it 'average_carbon' do
+      u1 = User.create!(first_name: "Ricardo",
+                           last_name: "Ledesma",
+                           email: "ricardoledesma@mail.com",
+                           token: "sdafjsd;lkfjakl;sdjf;lkasdjf",
+                           refresh_token: "sdkljfa;sldkjfgioeirdijfodi",
+                           role: "default",
+                           status: true)
+      u1.trip_logs.create!(title: "movies", miles: 6, description: "new quentin tarantino movie")
+      u1.trip_logs.create!(title: "bar", miles: 20, description: "great cocktails")
+
+      expect(u1.total_carbon).to eq(10.504)
+    end
     describe "class methods" do
       it 'top_carbon_savers' do
         u1 = User.create!(first_name: "Ricardo",
