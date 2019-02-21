@@ -5,12 +5,13 @@ class UserDecorator < Draper::Decorator
     if last_ten_destinations.empty?
       h.content_tag(:h4, "You have no trips")
     else
-      h.content_tag(:ul, last_ten_destinations.each do |d|
-        h.content_tag(:li, d.name)
-      end)
+      last_ten_destinations.map do |d|
+        h.content_tag(:div, "Trip Name: #{d.name}", class: 'destination').html_safe
+      end.join.html_safe
     end
   end
+
   def last_ten_destinations
-    object.destinations.limit(10).order(id: :asc)
+    object.destinations.limit(10).order(id: :desc)
   end
 end
