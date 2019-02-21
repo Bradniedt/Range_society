@@ -53,7 +53,7 @@ describe 'As a User' do
       within('.stats') do
         expect(page).to have_content("Average Trip Length")
         expect(page).to have_content(user.average_trip)
-        expect(page).to have_content("Average Carbon Saved Per Trip")
+        expect(page).to have_content("Average Carbon Saved")
         expect(page).to have_content(user.average_carbon)
         expect(page).to have_content("Total Trip Mileage")
         expect(page).to have_content(user.total_trip)
