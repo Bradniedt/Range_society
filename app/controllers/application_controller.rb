@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  CACHE_EXPIRATION = 30.days
   helper_method :current_user
   helper_method :require_user
 
@@ -20,26 +21,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def cache
-    @cache ||= ActiveSupport::Cache::MemoryStore.new
-  end
-
-  def save_search(activities, lat, lon, businesses)
-    cache.write('activities', activities)
-    cache.write('lat', lat)
-    cache.write('lon', lon)
-    cache.write('businesses', businesses)
-  end
-
-  def changed_search?(activities, lat, lon)
-    activity_search = activities == @cache.read('activities')
-    lat_search = (cache.read('lat').to_f - lat.to_f).abs > 0.0043
-    lon_search = (cache.read('lon').to_f - lon.to_f).abs > 0.0043
-
-    activity_search && lat_search && lon_search
-  end
-
-  def first_search?
-    !cache.read('activities')
+  def make_api_call(service_or_facade, method, params=nil)
+    if params
+      service_or_facade.public_send(method, params)
+    else
+      service_or_facade.public_send(method)      
+    end
   end
 end
