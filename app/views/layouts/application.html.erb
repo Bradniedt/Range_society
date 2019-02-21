@@ -36,6 +36,9 @@
                 <li class="nav-item">
                   <%= link_to "About", about_path, class: "nav-link" %>
                 </li>
+                <li class="nav-item">
+                  <%= link_to "Carbon Leaderboard", leaderboard_path, class: "nav-link" %>
+                </li>
                 <% if current_user %>
                 <li class="nav-item">
                   <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
@@ -51,7 +54,6 @@
         <% flash.each do |type, message| %>
           <p class="<%= type %>"><%= message %></p>
         <% end %>
-
         <%= yield %>
       </div>
     </div>
