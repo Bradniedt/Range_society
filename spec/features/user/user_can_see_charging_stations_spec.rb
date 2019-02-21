@@ -8,24 +8,11 @@ describe 'as a logged in user, my path is search' do
       @user_info = stub_omniauth
       click_button "Sign in With Google"
     end
-    it 'i see a map populated with results of ev stations within two miles of location', :vcr do
-      User.first
-      range = "25"
-      zip = 81401
-
-      visit new_search_path
-      select("#{range}", :from => 'ev_range')
-      fill_in :search_location, with: zip
-      within("#restaurants") do
-        check("activities[]")
-      end
-      click_on("Search")
-      expect(current_path).to eq(map_path)
-
-      # we have to figure out how to test map markers
-      # visit ev_map_path
-      # expect(current_path).to eq(ev_map_path)
-      # expect(status_code).to eq(200)
-    end
+    # it 'i see a map populated with results of ev stations within two miles of location', :vcr do
+    #   User.first
+    #   @request.session[:ev_search] = {"latitude" => -104.9816288, "longitude" => 39.72929545}
+    #
+    #   get '/ev_map', nil,
+    # end
   end
 end
