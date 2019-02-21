@@ -8,7 +8,7 @@ describe EvStationFacade do
 
     expect(evsf).to be_a(EvStationFacade)
   end
-  it 'all_ev_stations', :vcr do
+  it 'ev_stations', :vcr do
     lat = "39.7392"
     lon = "-104.9903"
     evsf = EvStationFacade.new(lat, lon)
