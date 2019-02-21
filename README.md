@@ -90,36 +90,25 @@ From the command line run `rspec`
 
 We used `rspec`, `capybara`, `launchy`, `vcr`, `shoulda-matchers`, and `simplecov` for testing.
 
-<!-- ##### Example of a feature test:
+##### Model, Service, Facade:
 
-![Alt text](/.readme/feature_test.jpg)
+![user model](/.readme/user.jpg)
+![yelp service](/.readme/yelp_service.jpg)
+![facade](/.readme/ev_station_facade.jpg)
 
-##### Example of a model test:
+##### Map, JavaScript:
 
-![Alt text](/.readme/model_test.jpg)
+![Alt text](/.readme/map.jpg)
+![Alt text](/.readme/js.jpg)
 
-##### Example of a namespaced Controller:
+##### Bootstrap Styling:
 
-![Alt text](/.readme/admin_users.jpg)
+![Alt text](/.readme/styling.jpg)
 
-##### Example of a model:
+##### Decorator, Cache:
 
-![Alt text](/.readme/model_page.jpg)
-
-##### Example of a view:
-
-![Alt text](/.readme/cart_show.jpg)
-
-## ActiveRecord Queries and Statistics
-We worked with relational databases and queries with many to many relationships.
-
-##### Our Schema
-
-![Alt text](/.readme/schema.jpg)
-
-##### Example of Queries
-
-![Alt text](/.readme/queries.jpg) -->
+![Alt text](/.readme/decorator.jpg)
+![Alt text](/.readme/cache.jpg)
 
 ## Deployment
 
@@ -141,3 +130,4 @@ Our app is deployed on heroku at: [RangeSociety](https://range-society.herokuapp
 * `geocoder`
 * `bootstrap`
 * `newrelic_rmp`
+* `draper`
