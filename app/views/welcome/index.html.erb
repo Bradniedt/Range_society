@@ -1,8 +1,7 @@
 <body>
   <!-- Page Content -->
-  <section class="opacity">
+  <section>
     <div class="main-container">
-      <div class="opaque"></div>
       <p id="tagline">Adventure is within reach</p>
       <% unless current_user %>
         <%= button_to "Sign in With Google", google_login_path, method: :get, class: "btn btn-primary", id: "root-btn"  %>
