@@ -11,14 +11,10 @@ Rails.application.routes.draw do
   get '/ev_map', to: "ev_map#show"
 
   get '/about', to: "about#index", as: :about
-<<<<<<< HEAD
+
   get '/leaderboard', to: "leaderboard#index"
   get '/logout', to: 'sessions#destroy', as: "logout"
-=======
-  get '/logout', to: 'sessions#destroy', as: "logout"
-  get '/leaderboard', to: "leaderboard#index"
-  
->>>>>>> 362ccd94b8ec582d6d2cd8eb0461dc4d6201fd09
+
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'
     resources :users, only: [:index, :update]
