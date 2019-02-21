@@ -10,7 +10,7 @@
     <%= check_box_tag("activities[]", value: "parks") %></p>
     <p><%= label_tag :search_location, "Enter Zip Code:" , class: "form-text"%></p>
     <p><%= text_field_tag :search_location, nil, id: "search-location", class: "form-control" %></p>
-    <p><%= button_tag "Use Current Location", type: "button", id: "current-location", class: "btn btn-primary" %></p>
+    <p><%= button_tag "Use Current Location", type: "button", class: "btn btn-primary", id: "current-location" %></p>
     <p><%= submit_tag "Search", id: "submit-search", class: "btn btn-primary", id: "search-btn-2" %></p>
   <% end %>
 </div>
