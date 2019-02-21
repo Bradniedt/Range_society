@@ -6,6 +6,7 @@ class EvMapController < ApplicationController
     @ev_search_lat = session[:ev_search]["latitude"]
     @ev_search_lon = session[:ev_search]["longitude"]
     @ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon)
+
     @picked_location = {
       latitude: @ev_search_lat,
       longitude: @ev_search_lon,

@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-signin-client_id" content="<%= ENV['CLIENT_ID'] %>.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -18,35 +19,40 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" id="title">Range Society</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <%= link_to "Home", root_path, class: "nav-link"%>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <% if current_user %>
-            <li class="nav-item">
-              <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "New Search", new_search_path, class: "nav-link" %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
+    <div class="background">
+      <div class="layer">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" id="title">Range Society</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "Home", root_path, class: "nav-link"%>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "About", about_path, class: "nav-link" %>
+                </li>
+                <% if current_user %>
+                <li class="nav-item">
+                  <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "New Search", new_search_path, class: "nav-link" %>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <% flash.each do |type, message| %>
+          <p class="<%= type %>"><%= message %></p>
+        <% end %>
+
+        <%= yield %>
       </div>
-    </nav>
-    <% flash.each do |type, message| %>
-      <p class="<%= type %>"><%= message %></p>
-    <% end %>
-    <%= yield %>
+    </div>
   </body>
 </html>

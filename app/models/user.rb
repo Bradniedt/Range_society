@@ -1,9 +1,15 @@
 class User < ApplicationRecord
   has_many :trip_logs
+  has_many :user_destinations
+  has_many :destinations, through: :user_destinations
   enum role: [:default, :admin]
 
   def self.from_omniauth(access_token)
     User.create(user_info_from_oauth(access_token))
+  end
+
+  def last_ten
+    destinations.order(created_at: :desc).limit(10)
   end
 
   private
