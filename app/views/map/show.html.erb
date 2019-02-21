@@ -7,7 +7,7 @@
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoibWFyeWFncmFjZSIsImEiOiJjanM0eG9qMmIwOXlhNDVuaTNuOXMzcXd1In0.Y3D7BRb8btkvg5JV_6PZaQ'
+    accessToken: '<%= ENV['MAPBOX_KEY'] %>'
   }).addTo(mymap);
   <% @businesses.each_with_index do |biz, i| %>
     const <%= "marker#{i}" %> = L.marker([<%= biz.coordinates[:latitude] %>, <%= biz.coordinates[:longitude] %>]).addTo(mymap);
