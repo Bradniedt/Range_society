@@ -18,7 +18,7 @@ describe 'as a logged in user, my path is search' do
 
       expect(current_path).to eq(dashboard_trip_logs_path)
       expect(page).to have_content("My Trips")
-      expect(page).to have_css(".trip", count: 2)
+      expect(page).to have_css("#trip-log", count: 2)
       within('.my-trips') do
         expect(page).to have_content(t1.title)
         expect(page).to have_content(t1.miles)
