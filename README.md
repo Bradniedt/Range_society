@@ -13,7 +13,7 @@ Contributors:
 
 # About RangeSociety
 
-Around 98% of all single-trip journeys in the US are 50 miles or less in length. Despite almost all available EV’s have a range that exceeds 50 miles, many people don’t buy, consider, or use EV’s. We’re here to help change that, and to help current EV owners. Our app will help you find things to do within your EV’s range, and to top it off, we’ll help you find an EV charger near the place you’re going so you can charge up while you’re there. Once you’ve arrived to your destination or back home, you can log your trip on your dashboard, and see how much tailpipe carbon emissions you saved.
+Around 98% of all single-trip journeys in the US are 50 miles or less in length. Despite the fact that almost all available EV’s have a range that exceeds 50 miles, many people don’t buy, consider, or use EV’s. We’re here to help change that, and to help current EV owners. Our app will help you find things to do within your EV’s range, and to top it off, we’ll help you find an EV charger near the place you’re going so you can charge up while you’re there. Once you’ve arrived to your destination or back home, you can log your trip on your dashboard, and see how much tailpipe carbon emissions you saved.
 
 ![trip log](/.readme/my_trips.jpg)
 
