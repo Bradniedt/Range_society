@@ -5,4 +5,7 @@
 <div class="col">
 <%= link_to 'Create a Trip Log', new_dashboard_trip_log_path, class: "btn btn-primary"%>
 </div>
-<%= user.list_last_ten %>
+<div class="recent_destinations">
+  <h2>Most Recent Destinations:</h2>
+  <%= user.list_last_ten %>
+</div>
