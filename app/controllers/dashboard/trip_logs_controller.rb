@@ -1,4 +1,4 @@
-class Dashboard::TripLogsController < Dashboard::BaseController
+class Dashboard::TripLogsController < BaseController
 
   def new
     @trip_log = TripLog.new
