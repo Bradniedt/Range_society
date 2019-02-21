@@ -2,10 +2,10 @@
 <div class="trip-log-list my-trips">
   <% @trip_logs.each do |trip_log| %>
   <div id="trip-log">
-    <p><%= trip_log.title %></p>
-    <p><%= trip_log.miles %></p>
-    <p><%= trip_log.description %></p>
-    <p><%= trip_log.carbon_saved %> kg</p>
+    <p><%= trip_log.title %>
+    <%= trip_log.miles %>
+    <%= trip_log.description %>
+    <%= trip_log.carbon_saved %> kg</p>
   </div>
   <% end %>
 </div>
