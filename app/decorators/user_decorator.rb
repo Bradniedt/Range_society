@@ -6,7 +6,7 @@ class UserDecorator < Draper::Decorator
       h.content_tag(:h4, "You have no trips")
     else
       last_ten_destinations.map do |d|
-        h.content_tag(:p, "Trip Name: #{d.name}", class: 'destination').html_safe
+        h.content_tag(:div, "Trip Name: #{d.name}", class: 'destination').html_safe
       end.join.html_safe
     end
   end
@@ -14,4 +14,4 @@ class UserDecorator < Draper::Decorator
   def last_ten_destinations
     object.destinations.limit(10).order(id: :desc)
   end
-end
+end 
