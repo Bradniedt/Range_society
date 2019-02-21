@@ -2,6 +2,7 @@
 @import '_welcome';
 @import '_search';
 @import '_dashboard';
+@import '_trip_logs';
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
@@ -13,29 +14,27 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
-  // padding-top: 65px;
-  background: linear-gradient(180deg, #4d9450, #5a97b4, #5a60b7);
-  background-size: 600% 600%;
+  color: #e8ede8 !important;
+}
 
-  -webkit-animation: AnimationName 12s ease infinite;
-  -moz-animation: AnimationName 12s ease infinite;
-  animation: AnimationName 12s ease infinite;
+.background {
+  background:url('./mountain_road.jpg');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-position: calc(50% - 50px) 50%;
+  background-repeat: no-repeat;
+}
 
-  @-webkit-keyframes AnimationName {
-      0%{background-position:51% 0%}
-      50%{background-position:50% 100%}
-      100%{background-position:51% 0%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:51% 0%}
-      50%{background-position:50% 100%}
-      100%{background-position:51% 0%}
-  }
-  @keyframes AnimationName {
-      0%{background-position:51% 0%}
-      50%{background-position:50% 100%}
-      100%{background-position:51% 0%}
-  }
+.layer {
+  background: rgba(79, 181, 79, 0.5);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
@@ -47,7 +46,6 @@ body {
   h1 {
     padding: 25px;
     text-align: center;
-    color: black;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -62,7 +60,6 @@ body {
 
   .btn {
     background: #4FB54F;
-    color: #333138;
     border: 1px solid #333138;
   }
 
@@ -96,7 +93,6 @@ body {
   h1 {
     padding: 25px;
     text-align: center;
-    color: black;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -111,7 +107,6 @@ body {
 
   .btn {
     background: #4FB54F;
-    color: #333138;
     border: 1px solid #333138;
   }
 

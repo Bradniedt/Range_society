@@ -5,13 +5,14 @@ input[type="text"]{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    color: white;
 }
 
-#search-location {
-  color: black;
+::placeholder {
+  color: white;
 }
 
-#ev_range {
+input#trip_log_miles, textarea#trip_log_description {
     background-color: transparent;
     border: 1px solid #FCA311;
     outline: none;
@@ -23,57 +24,45 @@ input[type="text"]{
 
 @media screen and (min-width: 768px) {
 
-  .checks {
-    display: inline;
+  input[type="text"]{
+      background-color: transparent;
+      border: 1px solid #FCA311;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      color: white;
   }
 
-  .form-control {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: -15px;
-    background: D0D3D2;
+  ::placeholder {
+    color: white;
+  }
+
+  input#trip_log_miles, textarea#trip_log_description {
+      background-color: transparent;
+      border: 1px solid #FCA311;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      color: white;
   }
 
   .navbar .nav > li .navbar-toggle {
   z-index: 10000;
   }
 
-  .col {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    text-align: center;
-  }
+
 
   .btn, {
     width: 90%;
-  }
-
-  .recent_destinations {
-    text-align: center;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    list-style: none;
-  }
-
-  .recent_destinations ul {
-    text-align: left;
-  }
-
-  input#activities_ {
     margin-left: 5%;
   }
-
 }
 
 @media screen and (max-width: 768px) {
 
-  .checks {
-    display: inline;
-  }
+
 
   .form-control {
     width: 30%;
@@ -94,8 +83,9 @@ input[type="text"]{
     text-align: center;
   }
 
-  .btn, {
+  .btn, .btn-primary {
     width: 90%;
+    margin-left: 5%;
   }
 
   .recent_destinations {
@@ -113,6 +103,25 @@ input[type="text"]{
 
   input#activities_ {
     margin-left: 5%;
+  }
+
+  input[type="text"]{
+      background-color: transparent;
+      border: 1px solid #FCA311;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+  }
+
+  input#trip_log_miles, input#trip_log_description {
+      background-color: transparent;
+      border: 1px solid #FCA311;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      color: white;
   }
 
 }
