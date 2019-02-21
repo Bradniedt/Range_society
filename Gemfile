@@ -43,6 +43,7 @@ gem 'geocoder'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'newrelic_rpm'
+gem 'draper'
 
 group :test do
   gem 'rake'
