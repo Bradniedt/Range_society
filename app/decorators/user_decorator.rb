@@ -3,7 +3,7 @@ class UserDecorator < Draper::Decorator
   delegate_all
   def list_last_ten
     if last_ten_destinations.empty?
-      h.content_tag(:h2, "You have no trips")
+      h.content_tag(:h4, "You have no trips")
     else
       last_ten_destinations.map do |d|
         h.content_tag(:p, "Trip Name: #{d.name}", class: 'destination').html_safe
