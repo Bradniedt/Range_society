@@ -1,18 +1,11 @@
 <div class="col"
-<h1 class="name"> <%= @user.first_name %>'s Dashboard </h1>
-
+  <h1 class="name"> <%= @user.first_name %>'s Dashboard </h1>
 </div>
 <div class="col">
 <%= link_to 'Create a Trip Log', new_dashboard_trip_log_path, class: "btn btn-primary"%>
 </div>
 
-<% unless @user.destinations.empty? %>
-  <div class="recent_destinations">
-    <h4>Most Recent Destinations:</h4>
-    <ul>
-    <% @destinations.reverse.each do |d| %>
-      <li class="destination"><%= d.name %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="recent_destinations">
+  <h2>Most Recent Destinations:</h2>
+  <%= user.list_last_ten %>
+</div>

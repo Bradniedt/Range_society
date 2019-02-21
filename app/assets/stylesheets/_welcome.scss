@@ -1,71 +1,125 @@
-body {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-}
-h1 {
-  padding: 25px;
-  text-align: center;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-}
-p {
-  text-align: center;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-}
-.oauth-button {
-  position: fixed;
-  left: 45%;
-  bottom: 30%;
-  border: 2px solid black;
+@media screen and (min-width: 768px) {
+
+  h1 {
+    padding: 25px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  .oauth-button {
+    position: fixed;
+    left: 45%;
+    bottom: 30%;
+    border: 2px solid black;
+  }
+
+  .navbar .nav > li .navbar-toggle {
+  z-index: 10000;
+  }
+
+  .btn, .btn-primary {
+    position: relative;
+    z-index: 1;
+  }
+
+  .main-container {
+    width: 90%;
+    margin-left: 5%;
+    height: 50%;
+    margin-top: 4em;
+    margin-bottom: -200px;
+    border-top: 1px solid #FCA311;
+    border-bottom: 1px solid #FCA311;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+      border: 1px solid #FCA311;
+      background: none;
+  }
+
+  #root-btn {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #tagline {
+    margin-top: 5%;
+    color: #333138;
+    font-weight: bold;
+    font-size: 1.25em;
+    z-index: 1;
+  }
+  #background-img {
+    z-index: -1;
+  }
 }
 
-.navbar .nav > li .navbar-toggle {
-z-index: 10000;
-}
 
-// .col {
-//   width: 200px;
-// }
+@media screen and (max-width: 768px) {
 
-.btn {
-  position: relative;
-  z-index: 1;
-  width: 200px;
-  margin-left: 30%;
-}
+  h1 {
+    padding: 25px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  .oauth-button {
+    position: fixed;
+    left: 45%;
+    bottom: 30%;
+    border: 2px solid black;
+  }
 
-.main-container {
-  width: 60%;
-  margin-left: 20%;
-  height: 200px;
-  width: 300px;
-  margin-top: 4em;
-  margin-bottom: -200px;
-  border-top: 1px solid #FCA311;
-  border-bottom: 1px solid #FCA311;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .navbar .nav > li .navbar-toggle {
+  z-index: 10000;
+  }
 
-#root-btn {
-  margin-left: 15%;
-}
+  .btn, .btn-primary {
+    position: relative;
+    z-index: 1;
+  }
 
-#tagline {
-  margin-top: 5%;
-  color: #333138;
-  font-weight: bold;
-  font-size: 1.25em;
-  z-index: 1;
-}
-#background-img {
-  z-index: -1;
+  .main-container {
+    width: 90%;
+    margin-left: 5%;
+    height: 50%;
+    margin-top: 4em;
+    margin-bottom: -200px;
+    border-top: 1px solid #FCA311;
+    border-bottom: 1px solid #FCA311;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+      border: 1px solid #FCA311;
+      background: none;
+  }
+
+  #root-btn {
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #tagline {
+    margin-top: 5%;
+    color: #333138;
+    font-weight: bold;
+    font-size: 1.25em;
+    z-index: 1;
+  }
+  #background-img {
+    z-index: -1;
+  }
 }
