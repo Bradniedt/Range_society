@@ -2,6 +2,7 @@
 A Turing School group project created with Rails.
 
 [RangeSociety](https://range-society.herokuapp.com)
+![homepage](/.readme/home.jpg)
 
 Contributors:
 * Bradley Niedt
@@ -9,11 +10,10 @@ Contributors:
 * Mary Goodhart
 * Ricardo Ledesma
 
-![RangeSociety]()
 
-#blurb about what our app is
+# About RangeSociety
+![trip log](/.readme/my_trips.jpg)
 
-![RangeSociety]()
 
 ## Learning Goals
 
@@ -24,6 +24,8 @@ Contributors:
 * Configure a continuous integration server (We used `Travis CI`)
 
 ## Getting Started && Prerequisites
+
+![RangeSociety](/.readme/first_search.jpg)
 
 ### Implementing OAuth
 
@@ -77,6 +79,7 @@ Open your browser (best functionality in Chrome).
 
 Welcome to our dev environment!
 
+![RangeSociety](/.readme/ev_chargers.jpg)
 
 ## Testing
 
