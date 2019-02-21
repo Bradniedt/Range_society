@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/ev_map', to: "ev_map#show"
 
   get '/about', to: "about#index", as: :about
+  get '/leaderboard', to: "leaderboard#index"
 
   namespace :admin do
     get 'dashboard', as: 'dashboard', to: 'users#index'
