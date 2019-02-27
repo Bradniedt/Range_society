@@ -55,7 +55,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'webmock'
-  gem 'shoulda-matchers', '~> 4.0'
+  gem 'shoulda-matchers'
   gem 'awesome_print'
   gem 'vcr'
   gem 'simplecov'
