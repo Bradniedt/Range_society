@@ -1,9 +1,11 @@
 @import 'bootstrap';
 @import '_welcome';
 @import '_search';
+@import '_about';
 @import '_dashboard';
 @import '_trip_logs';
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
 
 body {
 
@@ -17,6 +19,10 @@ body {
   color: #e8ede8 !important;
 }
 
+.main-scroll {
+  padding-bottom: 3%;
+}
+
 .background {
   background:url('./mountain_road.jpg');
   position: relative;
@@ -28,7 +34,7 @@ body {
 }
 
 .layer {
-  background: rgba(79, 181, 79, 0.5);
+  background: rgba(42, 137, 232, 0.5);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -40,12 +46,12 @@ img {
   display: block;
 }
 
-.col {
-  padding: auto !important;
+table {
+  background: #434C55;
 }
 
-.about {
-  margin-top: 1px;
+.col {
+  padding: auto !important;
 }
 
 
@@ -78,6 +84,10 @@ img {
     position: absolute !important;
   }
 
+  table {
+    background: #434C55;
+  }
+
   .navbar .nav > li {
     z-index: 10000;
     background: #333138;
@@ -86,6 +96,7 @@ img {
   .btn {
     background: #4FB54F;
     border: 1px solid #333138;
+    width: 50%
   }
 
   .root-btn:hover, .root-btn:focus, .root-btn:active, .root-btn.active {
@@ -103,6 +114,10 @@ img {
       color: #FCA311;
   }
 
+  #root-btn {
+    margin-left: 25%;
+  }
+
   #title {
     color: #4FB54F;
   }
@@ -113,6 +128,16 @@ img {
 
 
 @media screen and (min-width: 768px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  html, body, #map {
+      height: 100%;
+      width: 100vw;
+  }
+
   body {
     font-size: 1.2em;
   }
@@ -135,6 +160,7 @@ img {
   .btn {
     background: #4FB54F;
     border: 1px solid #333138;
+    width: 40%;
   }
 
   .root-btn:hover, .root-btn:focus, .root-btn:active, .root-btn.active {
