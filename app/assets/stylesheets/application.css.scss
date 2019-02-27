@@ -12,7 +12,7 @@ body {
   background-size: cover;
   -o-background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   color: #e8ede8 !important;
 }
@@ -55,6 +55,15 @@ img {
     font-size: 1em;
   }
 
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  html, body, #map {
+      height: 100%;
+      width: 100vw;
+  }
+
   h1 {
     padding: 25px;
     text-align: center;
@@ -63,6 +72,10 @@ img {
 
   ul {
     list-style: none;
+  }
+
+  img.leaflet-marker-icon {
+    position: absolute !important;
   }
 
   .navbar .nav > li {

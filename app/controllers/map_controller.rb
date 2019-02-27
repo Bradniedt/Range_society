@@ -1,5 +1,6 @@
 class MapController < ApplicationController
   def show
+    # NEW FACADE FOR MAP VIEW NEEDED
     @lat = session[:search]["lat"]
     @lon = session[:search]["lon"]
     @service = YelpService.new(@lat, @lon)

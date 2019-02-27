@@ -3,9 +3,10 @@ class EvMapController < ApplicationController
   before_action :require_user
 
   def show
+    # NEW FACADE FOR MAP VIEW NEEDED
     @ev_search_lat = session[:ev_search]["latitude"]
     @ev_search_lon = session[:ev_search]["longitude"]
-    @ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon)
+    @ev_facade = EvStationFacade.new(@ev_search_lat, @ev_search_lon) #add picked loctions
 
     @picked_location = {
       latitude: @ev_search_lat,
