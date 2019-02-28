@@ -1,7 +1,7 @@
 <div id="mapid"></div>
 
 <script>
-  const mymap = L.map('mapid').setView([<%= @ev_search_lat %>, <%= @ev_search_lon %>], 13);
+  const mymap = L.map('mapid').setView([<%= @ev_facade.lat %>, <%= @ev_facade.lon %>], 13);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -11,14 +11,14 @@
 }).addTo(mymap);
   var elecIcon = L.icon ({
     iconUrl: 'e-v.png',
-
+e
     iconSize: [30, 30],
     iconAnchor: [22, 94],
     popupAnchor:  [-3, -76],
   });
-  const picked_location_marker = L.marker([<%= @picked_location[:latitude] %>, <%= @picked_location[:longitude] %>]).addTo(mymap);
-  picked_location_marker.bindPopup("<%= @picked_location[:popup_html].gsub("\"", '\'').html_safe %>").openPopup();
-  <% @ev_stations.each_with_index do |ev, i| %>
+  const picked_location_marker = L.marker([<%= @ev_facade.lat %>, <%= @ev_facade.lon %>]).addTo(mymap);
+  picked_location_marker.bindPopup("<%= @ev_facade.popup_html %>").openPopup();
+  <% @ev_facade.stations.each_with_index do |ev, i| %>
     const <%= "marker#{i}" %> = L.marker([<%= ev.lat %>, <%= ev.lon %>], {icon: elecIcon}).addTo(mymap);
     <%= "marker#{i}" %>.bindPopup("<b><%= ev.name %></b><br><%= ev.hours %><br><%= ev.street_address %><br><%= ev.city %>").openPopup();
   <% end %>
