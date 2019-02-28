@@ -12,17 +12,17 @@ class Place
               :category
 
   def initialize(attributes, category)
-    @name = attributes[:name]
-    @image_url = attributes[:image_url]
-    @is_closed = attributes[:is_closed]
-    @url = attributes[:url]
-    @review_count = attributes[:review_count]
-    @rating = attributes[:rating]
-    @coordinates = attributes[:coordinates]
-    @location = attributes[:location]
-    @display_phone = attributes[:display_phone]
-    @distance = attributes[:distance]
-    @category = category
+    @name =  clean_for_popup(attributes[:name])
+    @image_url = clean_for_popup(attributes[:image_url])
+    @is_closed = clean_for_popup(attributes[:is_closed])
+    @url = clean_for_popup(attributes[:url])
+    @review_count = clean_for_popup(attributes[:review_count])
+    @rating = clean_for_popup(attributes[:rating])
+    @coordinates = clean_for_popup(attributes[:coordinates])
+    @location = clean_for_popup(attributes[:location])
+    @display_phone = clean_for_popup(attributes[:display_phone])
+    @distance = clean_for_popup(attributes[:distance])
+    @category = clean_for_popup(category)
   end
 
   def display_address
