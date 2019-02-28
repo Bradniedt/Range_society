@@ -1,13 +1,24 @@
 module Cache
-  def self.save_to_cache(key_and_values, expiration)
+  CACHE_EXPIRATION = 30.days
+
+  def self.write(key_and_values)
     key_and_values.each do |k,v|
       Rails.cache.delete k
-      Rails.cache.write(k, v, expires_in: expiration)
+      Rails.cache.write(k, v, expires_in: CACHE_EXPIRATION)
     end
   end
+
+  def self.get_stations(lat, lon)
+    return nil if changed_station_search?(lat, lon)
+    return retrieve(:ev_stations)
+  end
+
   def self.retrieve(key)
     Rails.cache.read(key)
   end
+
+  private
+
   def self.changed_business_search?(activities, lat, lon)
     activity_search = activities == Rails.cache.read('activities')
     lat_search = (Rails.cache.read('lat').to_f - lat.to_f).abs > 0.0043

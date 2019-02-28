@@ -6,4 +6,8 @@ module ApplicationHelper
   def activities
     ["Food", "Museums", "Concerts", "Parks"]
   end
+
+  def clean_for_popup(string)
+    string.gsub(/\s/, " ")
+  end
 end
