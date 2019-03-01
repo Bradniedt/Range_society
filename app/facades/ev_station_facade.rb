@@ -1,10 +1,10 @@
 class EvStationFacade
   attr_reader :lat, :lon
-  def initialize(coordinates, popup_html=nil)
-    lat, lon = coordinates.split(" ")
+  def initialize(attributes)
+    lat, lon = attributes[:coordinates].split(" ")
     @lat = lat
     @lon = lon
-    @popup_html = popup_html
+    @popup_html = attributes[:popup_html]
   end
 
   def self.from_internal_request(request)
