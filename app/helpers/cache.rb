@@ -1,10 +1,10 @@
 module Cache
   CACHE_EXPIRATION = 30.days
 
-  def self.write(key_and_values)
+  def self.write(key_and_values, expiration=nil)
     key_and_values.each do |k,v|
       Rails.cache.delete k
-      Rails.cache.write(k, v, expires_in: CACHE_EXPIRATION)
+      Rails.cache.write(k, v, expires_in: expiration || CACHE_EXPIRATION)
     end
   end
 
