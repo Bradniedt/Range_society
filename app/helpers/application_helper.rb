@@ -10,4 +10,8 @@ module ApplicationHelper
   def clean_for_popup(string)
     string.gsub(/\s/, " ")
   end
+
+  def self.strip_tags(string)
+    ActionController::Base.helpers.strip_tags(string)
+  end
 end
