@@ -3,14 +3,14 @@ class EvSearchController < ApplicationController
   before_action :require_user
 
   def create
-    Destination.add_from_internal_request(current_user, request.body.read)
-    Cache.write(ev_facade: EvStationFacade.new(ev_facade_params))
+    Destination.add_destination(current_user, search_params)
+    Cache.write({ev_facade: EvStationFacade.new(search_params)}, 5.minutes)
     redirect_to ev_map_url, status: 302
   end
 
   private
 
-  def ev_facade_params
-    params.permit(:coordinates, :popup_html)
+  def search_params
+    params.require(:ev_search).permit(:coordinates, :popup_html)
   end
 end
