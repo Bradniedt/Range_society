@@ -13,8 +13,10 @@ module Cache
     return retrieve(:ev_stations)
   end
 
-  def self.retrieve(key)
-    Rails.cache.read(key)
+  def self.retrieve(key, options=nil)
+    value = Rails.cache.read(key)
+    Rails.cache.delete key if options && options[:delete]
+    value
   end
 
   private
