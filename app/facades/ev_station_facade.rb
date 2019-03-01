@@ -1,6 +1,7 @@
 class EvStationFacade
   attr_reader :lat, :lon
-  def initialize(lat, lon, popup_html=nil)
+  def initialize(coordinates, popup_html=nil)
+    lat, lon = coordinates.split(" ")
     @lat = lat
     @lon = lon
     @popup_html = popup_html
