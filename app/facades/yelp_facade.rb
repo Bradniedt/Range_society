@@ -1,4 +1,5 @@
 class YelpFacade
+  attr_reader :lat, :lon, :activities
   def initialize(lat, lon, activities=nil)
     @lat = lat
     @lon = lon
