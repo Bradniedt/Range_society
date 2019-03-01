@@ -1,5 +1,5 @@
 class GeocoderFacade
-  def get_lat_lon(location)
+  def self.get_lat_lon(location)
     case location
     when /\d{2}\.\d{7,16} -\d{3}\.\d{7,16}/ then
       lat, lon = location.split(" ")
@@ -19,7 +19,7 @@ class GeocoderFacade
 
   private
 
-  def service
+  def self.service
     Geocoder
   end
 end
