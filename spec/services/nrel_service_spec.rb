@@ -14,15 +14,15 @@ describe NrelService do
     ns = NrelService.new(lat, lon)
     limit = 20
 
-    expect(ns.raw_ev_charging_stations.count).to eq(limit)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:access_days_time)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:station_name)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:street_address)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:city)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:state)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:zip)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:distance)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:latitude)
-    expect(ns.raw_ev_charging_stations.first).to have_key(:longitude)
+    expect(ns.charging_stations_json.count).to eq(limit)
+    expect(ns.charging_stations_json.first).to have_key(:access_days_time)
+    expect(ns.charging_stations_json.first).to have_key(:station_name)
+    expect(ns.charging_stations_json.first).to have_key(:street_address)
+    expect(ns.charging_stations_json.first).to have_key(:city)
+    expect(ns.charging_stations_json.first).to have_key(:state)
+    expect(ns.charging_stations_json.first).to have_key(:zip)
+    expect(ns.charging_stations_json.first).to have_key(:distance)
+    expect(ns.charging_stations_json.first).to have_key(:latitude)
+    expect(ns.charging_stations_json.first).to have_key(:longitude)
   end
 end
