@@ -8,7 +8,8 @@ module ApplicationHelper
   end
 
   def clean_for_popup(string)
-    string.gsub(/\s/, " ")
+    return string.gsub(/\s/, " ") if string.class == String
+    string
   end
 
   def self.strip_tags(string)
