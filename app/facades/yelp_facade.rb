@@ -32,6 +32,6 @@ class YelpFacade
 
     @activities.map do |category|
       create_places(service.businesses_search(category, nil, limit), category)
-    end
+    end.flatten
   end
 end
