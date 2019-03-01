@@ -6,6 +6,12 @@ class EvStationFacade
     @popup_html = popup_html
   end
 
+  def self.from_internal_request(request)
+    picked_location = JSON.parse(request, symbolize_names: true)
+    latitude, longitude = picked_location[:coordinates].split(" ")
+    new(latitude, longitude, picked_location[:popup_html])
+  end
+
   def stations
     stations = Cache.get_stations(@lat, @lon)
     unless stations
