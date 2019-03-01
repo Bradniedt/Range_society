@@ -9,7 +9,7 @@ class YelpFacade
   def businesses(activities=nil)
     businesses = Cache.get_businesses(@activities, @lat, @lon)
     unless businesses
-      businesses = service.businesses_search(@activities)
+      businesses = get_businesses
       Cache.write(activities: @activities, lat: @lat, lon: @lon, businesses: businesses)
     end
     businesses
@@ -19,5 +19,19 @@ class YelpFacade
 
   def service
     YelpService.new(@lat, @lon)
+  end
+
+  def create_places(places, category)
+    places.map do |raw_place|
+      Place.new(raw_place, category)
+    end
+  end
+
+  def get_businesses
+    limit = 25 / @activities.length
+
+    @activities.map do |category|
+      create_places(service.businesses_search(category, nil, limit), category)
+    end
   end
 end
