@@ -6,7 +6,7 @@ class YelpFacade
   end
 
   def businesses(activities=nil)
-    businesses = Cache.get_businesses(@activities)
+    businesses = Cache.get_businesses(@activities, @lat, @lon)
     unless businesses
       businesses = service.businesses_search(@activities)
       Cache.write(activities: @activities, lat: @lat, lon: @lon, businesses: businesses)
