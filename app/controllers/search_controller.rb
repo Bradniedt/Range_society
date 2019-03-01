@@ -5,13 +5,12 @@ class SearchController < ApplicationController
   end
 
   def create
-    coordinates = get_lat_lon(cookies["coordinates"] || params["search_location"])
+    coordinates = GeocoderFacade.get_lat_lon(cookies["coordinates"] || params["search_location"])
     cookies.delete "coordinates";
     return handle_invalid_location(coordinates) unless coordinates
-    activities = params["activities"].map { |p| eval(p).values}.flatten
     session[:search] = {
       range: params[:ev_range],
-      activity: activities,
+      activity: get_activities_search(params["activities"]),
       lat: coordinates[:lat],
       lon: coordinates[:lon]
     }
@@ -21,22 +20,8 @@ class SearchController < ApplicationController
 
   private
 
-  def get_lat_lon(location)
-    case location
-    when /\d{2}\.\d{7,16} -\d{3}\.\d{7,16}/ then
-      lat, lon = location.split(" ")
-      return {lat: lat, lon:lon}
-    when /^\d{5}\s*$/ then
-      # will need to change this eventually if we want this to work nationally.
-      result = Geocoder.search(location).select{ |place| place.data["address"]["state"] == "Colorado"}.first.data
-      lat = result["lat"]
-      lon = result["lon"]
-      return {lat: lat, lon:lon}
-    when /^$/ then
-      return nil
-    else
-      return false
-    end
+  def get_activities_search(activities_params)
+    activities_params.map { |p| eval(p).values}.flatten
   end
 
   def handle_invalid_location(coordinates)
