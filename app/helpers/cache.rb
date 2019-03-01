@@ -10,7 +10,12 @@ module Cache
 
   def self.get_stations(lat, lon)
     return nil if changed_station_search?(lat, lon)
-    return retrieve(:ev_stations)
+    retrieve(:ev_stations)
+  end
+
+  def self.get_businesses(activities, lat, lon)
+    return nil if changed_business_search?(activities, lat, lon)
+    retrieve(:activities)
   end
 
   def self.retrieve(key, options=nil)
@@ -22,7 +27,7 @@ module Cache
   private
 
   def self.changed_business_search?(activities, lat, lon)
-    activity_search = activities == Rails.cache.read('activities')
+    activity_search = activities == Rails.cache.read(:activities)
     lat_search = (Rails.cache.read('lat').to_f - lat.to_f).abs > 0.0043
     lon_search = (Rails.cache.read('lon').to_f - lon.to_f).abs > 0.0043
 
