@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Place, type: :model do
   it 'exists and has attributes', :vcr do
-    @businesses = YelpService.new(39.7392, -104.9903).send(:get_businesses, "museums")
+    @businesses = YelpService.new(39.7392, -104.9903).businesses_search("museums")
     place_data = @businesses.first
     place = Place.new(place_data, "museums")
 

@@ -7,8 +7,8 @@ describe YelpService do
     expect(yelp).to be_an_instance_of YelpService
   end
   it 'returns a collection of restaurants', :vcr do
-       service = YelpService.new(39.7392, -104.9903)
-       rests = service.send(:get_businesses, "food")
+      service = YelpService.new(39.7392, -104.9903)
+      rests = service.businesses_search("restaurants")
 
       expect(rests.first).to have_key(:coordinates)
       expect(rests.first[:coordinates]).to have_key(:latitude)
