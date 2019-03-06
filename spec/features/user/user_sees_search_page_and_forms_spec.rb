@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'as a logged in user, my path is search' do
   before :each do
     visit root_path
+    Rails.cache.clear
     Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
     @user_info = stub_omniauth
     click_button "Sign in With Google"

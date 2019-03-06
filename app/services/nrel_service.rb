@@ -1,11 +1,10 @@
 class NrelService
-
   def initialize(lat, lon)
     @lat = lat
     @lon = lon
   end
 
-  def raw_ev_charging_stations
+  def charging_stations_json
     JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
   end
 

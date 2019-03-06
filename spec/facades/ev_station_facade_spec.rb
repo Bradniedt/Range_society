@@ -2,19 +2,16 @@ require 'rails_helper'
 
 describe EvStationFacade do
   it 'exists' do
-    lat = "39.7392"
-    lon = "-104.9903"
-    evsf = EvStationFacade.new(lat, lon)
+    attributes = {coordinates: "39.7392 -104.9903"}
+    evsf = EvStationFacade.new(attributes)
 
     expect(evsf).to be_a(EvStationFacade)
   end
   it 'public_ev_stations', :vcr do
-    lat = "39.7392"
-    lon = "-104.9903"
-    evsf = EvStationFacade.new(lat, lon)
-    count = 20
+    attributes = {coordinates: "39.7392 -104.9903"}
+    evsf = EvStationFacade.new(attributes)
 
-    expect(evsf.ev_stations.count).to eq(count)
-    expect(evsf.ev_stations.first).to be_a(EvStation)
+    expect(evsf.stations.count).to eq(20)
+    expect(evsf.stations.first).to be_a(EvStation)
   end
 end

@@ -6,4 +6,13 @@ module ApplicationHelper
   def activities
     ["Food", "Museums", "Concerts", "Parks"]
   end
+
+  def clean_for_popup(string)
+    return string.gsub(/\s/, " ") if string.class == String
+    string
+  end
+
+  def self.strip_tags(string)
+    ActionController::Base.helpers.strip_tags(string)
+  end
 end

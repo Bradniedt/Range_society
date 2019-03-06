@@ -1,4 +1,5 @@
 class Place
+  include ApplicationHelper
   attr_reader :name,
               :image_url,
               :is_closed,
@@ -12,15 +13,15 @@ class Place
               :category
 
   def initialize(attributes, category)
-    @name = attributes[:name]
-    @image_url = attributes[:image_url]
+    @name =  clean_for_popup(attributes[:name])
+    @image_url = clean_for_popup(attributes[:image_url])
     @is_closed = attributes[:is_closed]
-    @url = attributes[:url]
+    @url = clean_for_popup(attributes[:url])
     @review_count = attributes[:review_count]
     @rating = attributes[:rating]
     @coordinates = attributes[:coordinates]
     @location = attributes[:location]
-    @display_phone = attributes[:display_phone]
+    @display_phone = clean_for_popup(attributes[:display_phone])
     @distance = attributes[:distance]
     @category = category
   end

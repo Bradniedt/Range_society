@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 feature "User Current Location" do
+  before :each do
+    Rails.cache.clear
+  end
   context 'as a logged in user on search path' do
     before :each do
       user = User.create(
