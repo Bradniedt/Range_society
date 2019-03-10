@@ -1,7 +1,7 @@
 # Range Society
 A Turing School group project created with Rails.
 
-[RangeSociety](https://range-society.herokuapp.com)
+[RangeSociety](https://serene-forest-55622.herokuapp.com/)
 ![homepage](/.readme/home.jpg)
 
 Contributors:
@@ -119,9 +119,9 @@ We used `rspec`, `capybara`, `launchy`, `vcr`, `shoulda-matchers`, and `simpleco
 
 ## Deployment
 
-Our app is deployed on heroku at: [RangeSociety](https://range-society.herokuapp.com)
+Our app is deployed on heroku at: [RangeSociety](https://serene-forest-55622.herokuapp.com/)
 
-`https://range-society.herokuapp.com`
+`https://serene-forest-55622.herokuapp.com/`
 
 ## Created with
 
