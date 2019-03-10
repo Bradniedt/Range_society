@@ -1,7 +1,7 @@
 # Range Society
 A Turing School group project created with Rails.
 
-[RangeSociety](https://range-society.herokuapp.com)
+[RangeSociety](https://serene-forest-55622.herokuapp.com/)
 ![homepage](/.readme/home.jpg)
 
 Contributors:
@@ -17,6 +17,11 @@ Around 98% of all single-trip journeys in the US are 50 miles or less in length.
 
 ![trip log](/.readme/my_trips.jpg)
 
+## Current Known Issues
+
+* Current Location button works sporadically
+* Nav bar disappears after moving/clicking on map
+* Map pins need to be anchored more precisely
 
 ## Learning Goals
 
@@ -119,9 +124,9 @@ We used `rspec`, `capybara`, `launchy`, `vcr`, `shoulda-matchers`, and `simpleco
 
 ## Deployment
 
-Our app is deployed on heroku at: [RangeSociety](https://range-society.herokuapp.com)
+Our app is deployed on heroku at: [RangeSociety](https://serene-forest-55622.herokuapp.com/)
 
-`https://range-society.herokuapp.com`
+`https://serene-forest-55622.herokuapp.com/`
 
 ## Created with
 
