@@ -17,6 +17,11 @@ Around 98% of all single-trip journeys in the US are 50 miles or less in length.
 
 ![trip log](/.readme/my_trips.jpg)
 
+## Current Known Issues
+
+* Current Location button works sporadically
+* Nav bar disappears after moving/clicking on map
+* Map pins need to be anchored more precisely
 
 ## Learning Goals
 
