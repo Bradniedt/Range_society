@@ -44,6 +44,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'newrelic_rpm'
 gem 'draper'
+gem 'shoulda-matchers'
 
 group :test do
   gem 'rake'
@@ -55,7 +56,6 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'webmock'
-  gem 'shoulda-matchers'
   gem 'awesome_print'
   gem 'vcr'
   gem 'simplecov'

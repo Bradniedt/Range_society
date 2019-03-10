@@ -1,3 +1,13 @@
+.recent_destinations {
+  background: #434C55 !important;
+  border: 1px solid #FCA311 !important;
+  width: 60%;
+}
+
+#name-banner {
+  font-size: 1.5em;
+}
+
 @media screen and (max-width: 768px) {
   .col {
     font-size: 1.25em;
@@ -22,14 +32,15 @@
     text-align: center;
   }
 
-  .btn, {
-    width: 90%;
+  .btn, .btn-primary {
+    width: 50% !important;
+    margin-left: 25% !important;
   }
 
-  .recent_destinations {
+  #recent {
     text-align: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
     list-style: none;
@@ -71,14 +82,15 @@
     text-align: center;
   }
 
-  .btn, {
-    width: 70%;
+  .btn, .btn-primary {
+    width: 50% !important;
+    margin-left: 25% !important;
   }
 
-  .recent_destinations {
+  #recent {
     text-align: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
     list-style: none;

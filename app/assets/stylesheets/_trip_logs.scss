@@ -22,6 +22,10 @@ input#trip_log_miles, textarea#trip_log_description {
     color: white;
 }
 
+th {
+  font-size: 1.2em;
+}
+
 th, td {
   border: 1px solid #FCA311;
   margin: 2%;
@@ -75,6 +79,14 @@ table {
 
 @media screen and (max-width: 768px) {
 
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  html, body, #map {
+      height: 100%;
+      width: 100vw;
+  }
 
 
   .form-control {
